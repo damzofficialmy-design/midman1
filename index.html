@@ -43,27 +43,11 @@ body::before{
     position:fixed;
     inset:0;
     pointer-events:none;
-
     background-image:
-        linear-gradient(
-            rgba(0,153,255,.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(0,153,255,.035) 1px,
-            transparent 1px
-        );
-
+        linear-gradient(rgba(0,153,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,153,255,.035) 1px,transparent 1px);
     background-size:55px 55px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent
-        );
-
+    mask-image:linear-gradient(to bottom, black,transparent);
     z-index:-5;
 }
 
@@ -119,25 +103,10 @@ body::before{
 }
 
 @keyframes particleFloat{
-
-    from{
-        transform:translateY(110vh);
-        opacity:0;
-    }
-
-    15%{
-        opacity:.7;
-    }
-
-    85%{
-        opacity:.7;
-    }
-
-    to{
-        transform:translateY(-20vh);
-        opacity:0;
-    }
-
+    from{transform:translateY(110vh);opacity:0;}
+    15%{opacity:.7;}
+    85%{opacity:.7;}
+    to{transform:translateY(-20vh);opacity:0;}
 }
 
 /* =========================================================
@@ -148,21 +117,14 @@ header{
     position:sticky;
     top:0;
     z-index:999;
-
     height:72px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 6%;
-
     background:rgba(2,10,20,.82);
     backdrop-filter:blur(18px);
-
-    border-bottom:
-        1px solid
-        rgba(0,153,255,.22);
+    border-bottom:1px solid rgba(0,153,255,.22);
 }
 
 .brand{
@@ -174,16 +136,9 @@ header{
 .brand img{
     width:44px;
     height:44px;
-
     object-fit:cover;
-
     border-radius:10px;
-
-    filter:
-        drop-shadow(
-            0 0 12px
-            rgba(0,160,255,.7)
-        );
+    filter:drop-shadow(0 0 12px rgba(0,160,255,.7));
 }
 
 .brand-text{
@@ -212,22 +167,12 @@ header{
 }
 
 .lang button{
-
-    border:
-        1px solid
-        rgba(0,153,255,.45);
-
+    border:1px solid rgba(0,153,255,.45);
     color:#fff;
-
-    background:
-        rgba(0,100,180,.1);
-
+    background:rgba(0,100,180,.1);
     padding:7px 11px;
-
     border-radius:7px;
-
     cursor:pointer;
-
     transition:.25s;
 }
 
@@ -236,12 +181,8 @@ header{
 }
 
 .lang button.active{
-
     background:#008cff;
-
-    box-shadow:
-        0 0 15px
-        rgba(0,140,255,.5);
+    box-shadow:0 0 15px rgba(0,140,255,.5);
 }
 
 /* =========================================================
@@ -250,82 +191,32 @@ header{
 
 .hero{
     position:relative;
-
     text-align:center;
-
-    padding:
-        85px
-        20px
-        45px;
+    padding:85px 20px 45px;
 }
 
 .hero-logo{
-
     width:115px;
     height:115px;
-
     object-fit:cover;
-
     border-radius:20px;
-
     margin-bottom:18px;
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            rgba(0,170,255,.8)
-        )
-        drop-shadow(
-            0 0 35px
-            rgba(0,120,255,.35)
-        );
-
-    animation:
-        logoFloat
-        4s
-        ease-in-out
-        infinite;
+    filter:drop-shadow(0 0 10px rgba(0,170,255,.8)) drop-shadow(0 0 35px rgba(0,120,255,.35));
+    animation:logoFloat 4s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
-
-    0%,100%{
-        transform:
-            translateY(0)
-            rotateY(0deg);
-    }
-
-    50%{
-        transform:
-            translateY(-10px)
-            rotateY(8deg);
-    }
-
+    0%,100%{transform:translateY(0) rotateY(0deg);}
+    50%{transform:translateY(-10px) rotateY(8deg);}
 }
 
 .hero h1{
-
-    font-size:
-        clamp(
-            42px,
-            8vw,
-            82px
-        );
-
+    font-size:clamp(42px, 8vw, 82px);
     font-weight:1000;
-
     letter-spacing:-2px;
-
     text-transform:uppercase;
-
-    transform:
-        perspective(500px)
-        rotateX(5deg);
-
-    text-shadow:
-        0 4px 0 #004d91,
-        0 8px 20px rgba(0,0,0,.8),
-        0 0 30px rgba(0,153,255,.4);
+    transform:perspective(500px) rotateX(5deg);
+    text-shadow:0 4px 0 #004d91, 0 8px 20px rgba(0,0,0,.8), 0 0 30px rgba(0,153,255,.4);
 }
 
 .hero h1 span{
@@ -333,18 +224,10 @@ header{
 }
 
 .hero p{
-
     max-width:680px;
-
-    margin:
-        16px
-        auto
-        0;
-
+    margin:16px auto 0;
     color:#9db9d4;
-
     line-height:1.7;
-
     font-size:15px;
 }
 
@@ -353,57 +236,33 @@ header{
 ========================================================= */
 
 .controls{
-
     width:90%;
     max-width:1100px;
-
     margin:auto;
 }
 
 /* SEARCH */
 
 .search{
-
     position:relative;
-
     margin-bottom:20px;
 }
 
 .search input{
-
     width:100%;
-
-    padding:
-        17px
-        20px
-        17px
-        48px;
-
+    padding:17px 20px 17px 48px;
     border-radius:13px;
-
-    border:
-        1px solid
-        rgba(0,153,255,.35);
-
+    border:1px solid rgba(0,153,255,.35);
     outline:none;
-
-    background:
-        rgba(3,18,33,.85);
-
+    background:rgba(3,18,33,.85);
     color:#fff;
-
     font-size:15px;
-
     transition:.3s;
 }
 
 .search input:focus{
-
     border-color:#00aaff;
-
-    box-shadow:
-        0 0 20px
-        rgba(0,153,255,.12);
+    box-shadow:0 0 20px rgba(0,153,255,.12);
 }
 
 .search input::placeholder{
@@ -411,17 +270,11 @@ header{
 }
 
 .search-icon{
-
     position:absolute;
-
     left:17px;
     top:50%;
-
-    transform:
-        translateY(-50%);
-
+    transform:translateY(-50%);
     color:#00aaff;
-
     font-size:18px;
 }
 
@@ -430,17 +283,11 @@ header{
 ========================================================= */
 
 .filters{
-
     display:flex;
-
     gap:10px;
-
     overflow-x:auto;
-
     padding-bottom:8px;
-
     margin-bottom:30px;
-
     scrollbar-width:none;
 }
 
@@ -449,46 +296,22 @@ header{
 }
 
 .filters button{
-
     white-space:nowrap;
-
-    padding:
-        10px
-        17px;
-
+    padding:10px 17px;
     border-radius:30px;
-
     color:#a9c4dc;
-
-    background:
-        rgba(5,28,50,.8);
-
-    border:
-        1px solid
-        rgba(0,153,255,.25);
-
+    background:rgba(5,28,50,.8);
+    border:1px solid rgba(0,153,255,.25);
     cursor:pointer;
-
     transition:.25s;
 }
 
 .filters button:hover,
 .filters button.active{
-
     color:#fff;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0078df,
-            #00b8ff
-        );
-
+    background:linear-gradient(135deg, #0078df, #00b8ff);
     border-color:#00aaff;
-
-    box-shadow:
-        0 0 18px
-        rgba(0,153,255,.25);
+    box-shadow:0 0 18px rgba(0,153,255,.25);
 }
 
 /* =========================================================
@@ -496,23 +319,14 @@ header{
 ========================================================= */
 
 .container{
-
     width:90%;
     max-width:1100px;
-
     margin:auto;
 }
 
 .midman-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(280px,1fr)
-        );
-
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
     gap:20px;
 }
 
@@ -521,80 +335,38 @@ header{
 ========================================================= */
 
 .card{
-
     position:relative;
-
     padding:22px;
-
     border-radius:20px;
-
     overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(11,40,70,.92),
-            rgba(2,14,28,.96)
-        );
-
-    border:
-        1px solid
-        rgba(0,153,255,.22);
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,.35),
-
-        inset 0 0 30px
-        rgba(0,153,255,.025);
-
+    background:linear-gradient(145deg, rgba(11,40,70,.92), rgba(2,14,28,.96));
+    border:1px solid rgba(0,153,255,.22);
+    box-shadow:0 15px 40px rgba(0,0,0,.35), inset 0 0 30px rgba(0,153,255,.025);
     transition:.35s;
 }
 
 .card::before{
-
     content:"";
-
     position:absolute;
-
     width:150px;
     height:150px;
-
     right:-70px;
     top:-70px;
-
     border-radius:50%;
-
     background:#008cff;
-
     filter:blur(70px);
-
     opacity:.12;
 }
 
 .card::after{
-
     content:"";
-
     position:absolute;
-
     left:-100%;
-
     top:0;
-
     width:50%;
     height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.04),
-            transparent
-        );
-
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.04), transparent);
     transform:skewX(-20deg);
-
     transition:.7s;
 }
 
@@ -603,55 +375,28 @@ header{
 }
 
 .card:hover{
-
-    transform:
-        translateY(-8px)
-        perspective(700px)
-        rotateX(1deg);
-
+    transform:translateY(-8px) perspective(700px) rotateX(1deg);
     border-color:#009cff;
-
-    box-shadow:
-
-        0 20px 50px
-        rgba(0,0,0,.5),
-
-        0 0 25px
-        rgba(0,140,255,.14);
+    box-shadow:0 20px 50px rgba(0,0,0,.5), 0 0 25px rgba(0,140,255,.14);
 }
 
 /* PROFILE */
 
 .profile{
-
     display:flex;
-
     align-items:center;
-
     gap:14px;
-
     position:relative;
-
     z-index:2;
 }
 
 .avatar{
-
     width:68px;
     height:68px;
-
     border-radius:50%;
-
     object-fit:cover;
-
-    border:
-        3px solid
-        #008cff;
-
-    box-shadow:
-        0 0 15px
-        rgba(0,153,255,.45);
-
+    border:3px solid #008cff;
+    box-shadow:0 0 15px rgba(0,153,255,.45);
     background:#06213d;
 }
 
@@ -660,18 +405,13 @@ header{
 }
 
 .name{
-
     font-size:19px;
-
     font-weight:900;
 }
 
 .role{
-
     color:#7898b4;
-
     font-size:12px;
-
     margin-top:5px;
 }
 
@@ -680,97 +420,53 @@ header{
 ========================================================= */
 
 .status{
-
     position:relative;
-
     z-index:2;
-
     display:inline-flex;
-
     align-items:center;
-
     gap:7px;
-
     margin-top:17px;
-
-    padding:
-        6px
-        11px;
-
+    padding:6px 11px;
     border-radius:30px;
-
     font-size:11px;
-
     font-weight:800;
 }
 
 .status.online{
-
     color:#4dffa0;
-
-    background:
-        rgba(0,255,120,.08);
+    background:rgba(0,255,120,.08);
 }
 
 .status.busy{
-
     color:#ffd15c;
-
-    background:
-        rgba(255,193,7,.08);
+    background:rgba(255,193,7,.08);
 }
 
 .status.offline{
-
     color:#ff7180;
-
-    background:
-        rgba(255,60,80,.08);
+    background:rgba(255,60,80,.08);
 }
 
 .dot{
-
     width:8px;
     height:8px;
-
     border-radius:50%;
 }
 
 .online .dot{
-
     background:#20ff78;
-
-    box-shadow:
-        0 0 10px
-        #20ff78;
-
-    animation:
-        onlinePulse
-        1.5s
-        infinite;
+    box-shadow:0 0 10px #20ff78;
+    animation:onlinePulse 1.5s infinite;
 }
 
 @keyframes onlinePulse{
-
-    0%,100%{
-        opacity:1;
-        transform:scale(1);
-    }
-
-    50%{
-        opacity:.5;
-        transform:scale(.75);
-    }
-
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:.5;transform:scale(.75);}
 }
 
 .busy .dot{
-
     background:#ffc107;
-
-    box-shadow:
-        0 0 10px
-        #ffc107;
+    box-shadow:0 0 10px #ffc107;
 }
 
 .offline .dot{
@@ -782,63 +478,35 @@ header{
 ========================================================= */
 
 .games{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:6px;
-
     margin-top:15px;
-
     position:relative;
-
     z-index:2;
 }
 
 .game{
-
     font-size:10px;
-
-    padding:
-        5px
-        8px;
-
+    padding:5px 8px;
     border-radius:6px;
-
     color:#8fcfff;
-
-    background:
-        rgba(0,140,255,.08);
-
-    border:
-        1px solid
-        rgba(0,140,255,.16);
+    background:rgba(0,140,255,.08);
+    border:1px solid rgba(0,140,255,.16);
 }
 
 /* =========================================================
-   CARD INFO
+   CARD INFO - DAH BUANG DEAL
 ========================================================= */
 
 .card-info{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(2,1fr); /* tukar dari 3 ke 2 */
     gap:8px;
-
     margin-top:18px;
-
     padding-top:15px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.07);
-
+    border-top:1px solid rgba(255,255,255,.07);
     position:relative;
-
     z-index:2;
 }
 
@@ -847,13 +515,9 @@ header{
 }
 
 .card-info small{
-
     display:block;
-
     color:#64829d;
-
     font-size:10px;
-
     margin-bottom:5px;
 }
 
@@ -866,43 +530,24 @@ header{
 ========================================================= */
 
 .buttons{
-
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:8px;
-
     margin-top:18px;
-
     position:relative;
-
     z-index:3;
 }
 
 .btn{
-
     border:0;
-
     cursor:pointer;
-
-    padding:
-        11px
-        8px;
-
+    padding:11px 8px;
     border-radius:9px;
-
     color:#fff;
-
     font-weight:bold;
-
     text-decoration:none;
-
     text-align:center;
-
     font-size:12px;
-
     transition:.25s;
 }
 
@@ -911,40 +556,21 @@ header{
 }
 
 .detail-btn{
-
-    background:
-        rgba(0,130,230,.15);
-
-    border:
-        1px solid
-        rgba(0,153,255,.3);
+    background:rgba(0,130,230,.15);
+    border:1px solid rgba(0,153,255,.3);
 }
 
 .detail-btn:hover{
-
-    background:
-        rgba(0,130,230,.3);
-
-    box-shadow:
-        0 0 15px
-        rgba(0,140,255,.12);
+    background:rgba(0,130,230,.3);
+    box-shadow:0 0 15px rgba(0,140,255,.12);
 }
 
 .whatsapp{
-
-    background:
-        linear-gradient(
-            135deg,
-            #078044,
-            #00c76b
-        );
+    background:linear-gradient(135deg, #078044, #00c76b);
 }
 
 .whatsapp:hover{
-
-    box-shadow:
-        0 0 17px
-        rgba(0,200,100,.25);
+    box-shadow:0 0 17px rgba(0,200,100,.25);
 }
 
 /* =========================================================
@@ -952,15 +578,10 @@ header{
 ========================================================= */
 
 .no-result{
-
     display:none;
-
     text-align:center;
-
     padding:55px 10px;
-
     color:#718da7;
-
     font-size:15px;
 }
 
@@ -969,295 +590,162 @@ header{
 ========================================================= */
 
 #detailPage{
-
     display:none;
-
-    min-height:
-        calc(100vh - 72px);
-
-    padding:
-        50px
-        20px;
+    min-height:calc(100vh - 72px);
+    padding:50px 20px;
 }
 
 .detail-container{
-
     width:90%;
-
     max-width:850px;
-
     margin:auto;
 }
 
 .back{
-
     display:inline-block;
-
-    padding:
-        10px
-        15px;
-
+    padding:10px 15px;
     border-radius:9px;
-
-    border:
-        1px solid
-        rgba(0,153,255,.3);
-
-    background:
-        rgba(0,100,180,.1);
-
+    border:1px solid rgba(0,153,255,.3);
+    background:rgba(0,100,180,.1);
     color:#fff;
-
     cursor:pointer;
-
     margin-bottom:25px;
-
     transition:.25s;
 }
 
 .back:hover{
-
-    background:
-        rgba(0,130,230,.2);
-
-    transform:
-        translateX(-3px);
+    background:rgba(0,130,230,.2);
+    transform:translateX(-3px);
 }
 
 .detail-card{
-
     position:relative;
-
     overflow:hidden;
-
     padding:35px;
-
     border-radius:25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(10,42,75,.95),
-            rgba(2,14,28,.98)
-        );
-
-    border:
-        1px solid
-        rgba(0,153,255,.3);
-
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.5);
+    background:linear-gradient(145deg, rgba(10,42,75,.95), rgba(2,14,28,.98));
+    border:1px solid rgba(0,153,255,.3);
+    box-shadow:0 25px 70px rgba(0,0,0,.5);
 }
 
 .detail-card::before{
-
     content:"";
-
     position:absolute;
-
     width:250px;
     height:250px;
-
     top:-120px;
     right:-100px;
-
     border-radius:50%;
-
     background:#008cff;
-
     filter:blur(100px);
-
     opacity:.12;
 }
 
 .detail-top{
-
     display:flex;
-
     align-items:center;
-
     gap:25px;
-
     position:relative;
-
     z-index:2;
 }
 
 .detail-avatar{
-
     width:130px;
     height:130px;
-
     object-fit:cover;
-
     border-radius:25px;
-
-    border:
-        3px solid
-        #009dff;
-
-    box-shadow:
-        0 0 30px
-        rgba(0,153,255,.3);
+    border:3px solid #009dff;
+    box-shadow:0 0 30px rgba(0,153,255,.3);
 }
 
 .detail-name{
-
     font-size:35px;
-
     font-weight:900;
 }
 
 .detail-role{
-
     margin-top:7px;
-
     color:#83a6c2;
 }
 
 .detail-section{
-
     margin-top:30px;
-
     position:relative;
-
     z-index:2;
 }
 
 .detail-section h3{
-
     margin-bottom:12px;
-
     color:#00aaff;
-
     font-size:16px;
 }
 
 .detail-section p{
-
     color:#9eb6cc;
-
     line-height:1.8;
-
     font-size:14px;
 }
 
 .detail-games{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:8px;
 }
 
 .detail-games span{
-
-    padding:
-        8px
-        12px;
-
+    padding:8px 12px;
     border-radius:8px;
-
-    background:
-        rgba(0,140,255,.1);
-
-    border:
-        1px solid
-        rgba(0,153,255,.2);
-
+    background:rgba(0,140,255,.1);
+    border:1px solid rgba(0,153,255,.2);
     color:#9fd9ff;
-
     font-size:12px;
 }
 
 .detail-stats{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(2,1fr); /* tukar dari 3 ke 2 */
     gap:12px;
 }
 
 .detail-stat{
-
     padding:17px;
-
     text-align:center;
-
     border-radius:12px;
-
-    background:
-        rgba(0,0,0,.18);
-
-    border:
-        1px solid
-        rgba(255,255,255,.06);
+    background:rgba(0,0,0,.18);
+    border:1px solid rgba(255,255,255,.06);
 }
 
 .detail-stat strong{
-
     display:block;
-
     font-size:22px;
-
     color:#00b7ff;
-
     margin-bottom:5px;
 }
 
 .detail-stat span{
-
     font-size:11px;
-
     color:#708ba5;
 }
 
 .detail-contact{
-
     display:block;
-
     width:100%;
-
     margin-top:25px;
-
     padding:15px;
-
     text-align:center;
-
     text-decoration:none;
-
     color:#fff;
-
     border-radius:12px;
-
     font-weight:900;
-
-    background:
-        linear-gradient(
-            135deg,
-            #078044,
-            #00c76b
-        );
-
+    background:linear-gradient(135deg, #078044, #00c76b);
     position:relative;
-
     z-index:3;
-
     transition:.25s;
 }
 
 .detail-contact:hover{
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 0 20px
-        rgba(0,200,100,.25);
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(0,200,100,.25);
 }
 
 /* =========================================================
@@ -1265,22 +753,12 @@ header{
 ========================================================= */
 
 footer{
-
     margin-top:70px;
-
-    padding:
-        28px
-        20px;
-
+    padding:28px 20px;
     text-align:center;
-
     color:#607b96;
-
     font-size:12px;
-
-    border-top:
-        1px solid
-        rgba(0,153,255,.12);
+    border-top:1px solid rgba(0,153,255,.12);
 }
 
 /* =========================================================
@@ -1288,76 +766,19 @@ footer{
 ========================================================= */
 
 @media(max-width:600px){
-
-    header{
-
-        height:65px;
-
-        padding:
-            0 5%;
-    }
-
-    .brand img{
-
-        width:38px;
-        height:38px;
-    }
-
-    .brand-text{
-        font-size:16px;
-    }
-
-    .hero{
-
-        padding-top:60px;
-    }
-
-    .hero-logo{
-
-        width:90px;
-        height:90px;
-    }
-
-    .midman-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    .detail-card{
-
-        padding:22px;
-    }
-
-    .detail-top{
-
-        flex-direction:column;
-
-        text-align:center;
-    }
-
-    .detail-name{
-
-        font-size:28px;
-    }
-
-    .detail-stats{
-
-        grid-template-columns:1fr;
-    }
-
-    .buttons{
-
-        grid-template-columns:1fr;
-    }
-
-    .detail-avatar{
-
-        width:115px;
-        height:115px;
-    }
-
-    .particles{display:none} /* bagi laju kat phone */
-
+    header{height:65px;padding:0 5%;}
+    .brand img{width:38px;height:38px;}
+    .brand-text{font-size:16px;}
+    .hero{padding-top:60px;}
+    .hero-logo{width:90px;height:90px;}
+    .midman-grid{grid-template-columns:1fr;}
+    .detail-card{padding:22px;}
+    .detail-top{flex-direction:column;text-align:center;}
+    .detail-name{font-size:28px;}
+    .detail-stats{grid-template-columns:1fr;}
+    .buttons{grid-template-columns:1fr;}
+    .detail-avatar{width:115px;height:115px;}
+    .particles{display:none}
 }
 
 /* =========================================================
@@ -1365,24 +786,9 @@ footer{
 ========================================================= */
 
 @media(max-width:380px){
-
-    .brand-text{
-        font-size:14px;
-    }
-
-    .lang button{
-
-        padding:
-            6px
-            8px;
-
-        font-size:11px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
+    .brand-text{font-size:14px;}
+    .lang button{padding:6px 8px;font-size:11px;}
+    .hero h1{font-size:38px;}
 }
 
 </style>
@@ -1399,31 +805,14 @@ footer{
 <div class="orb orb2"></div>
 
 <div class="particles">
-
-    <span class="particle"
-          style="left:5%;animation-delay:0s"></span>
-
-    <span class="particle"
-          style="left:15%;animation-delay:2s"></span>
-
-    <span class="particle"
-          style="left:27%;animation-delay:5s"></span>
-
-    <span class="particle"
-          style="left:42%;animation-delay:1s"></span>
-
-    <span class="particle"
-          style="left:58%;animation-delay:4s"></span>
-
-    <span class="particle"
-          style="left:72%;animation-delay:2s"></span>
-
-    <span class="particle"
-          style="left:86%;animation-delay:6s"></span>
-
-    <span class="particle"
-          style="left:95%;animation-delay:3s"></span>
-
+    <span class="particle" style="left:5%;animation-delay:0s"></span>
+    <span class="particle" style="left:15%;animation-delay:2s"></span>
+    <span class="particle" style="left:27%;animation-delay:5s"></span>
+    <span class="particle" style="left:42%;animation-delay:1s"></span>
+    <span class="particle" style="left:58%;animation-delay:4s"></span>
+    <span class="particle" style="left:72%;animation-delay:2s"></span>
+    <span class="particle" style="left:86%;animation-delay:6s"></span>
+    <span class="particle" style="left:95%;animation-delay:3s"></span>
 </div>
 
 <!-- =====================================================
@@ -1431,45 +820,17 @@ footer{
 ===================================================== -->
 
 <header>
-
     <div class="brand">
-
-        <img
-            src="images/damz-3d.jpg"
-            alt="DAMZ">
-
-        <div class="brand-text">
-
-            DAMZ
-            <span>MIDMAN</span>
-
-        </div>
-
+        <img src="images/damz-3d.jpg" alt="DAMZ">
+        <div class="brand-text">DAMZ <span>MIDMAN</span></div>
     </div>
 
     <div class="header-right">
-
         <div class="lang">
-
-            <button
-                class="active"
-                onclick="changeLanguage('bm',this)">
-
-                BM
-
-            </button>
-
-            <button
-                onclick="changeLanguage('en',this)">
-
-                EN
-
-            </button>
-
+            <button class="active" onclick="changeLanguage('bm',this)">BM</button>
+            <button onclick="changeLanguage('en',this)">EN</button>
         </div>
-
     </div>
-
 </header>
 
 <!-- =====================================================
@@ -1479,28 +840,10 @@ footer{
 <main id="homePage">
 
 <!-- HERO -->
-
 <section class="hero">
-
-    <img
-        class="hero-logo"
-        src="images/damz-3d.jpg"
-        alt="DAMZ Logo">
-
-    <h1>
-
-        DAMZ
-        <span>MIDMAN</span>
-
-    </h1>
-
-    <p id="heroText">
-
-        Senarai Midman dipercayai untuk urusan jual beli
-        akaun gaming di Malaysia.
-
-    </p>
-
+    <img class="hero-logo" src="images/damz-3d.jpg" alt="DAMZ Logo">
+    <h1>DAMZ <span>MIDMAN</span></h1>
+    <p id="heroText">Senarai Midman dipercayai untuk urusan jual beli akaun gaming di Malaysia.</p>
 </section>
 
 <!-- =====================================================
@@ -1508,54 +851,17 @@ footer{
 ===================================================== -->
 
 <section class="controls">
-
     <div class="search">
-
-        <span class="search-icon">
-            🔎
-        </span>
-
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Cari nama Midman..."
-            oninput="filterMidman()">
-
+        <span class="search-icon">🔎</span>
+        <input type="text" id="searchInput" placeholder="Cari nama Midman..." oninput="filterMidman()">
     </div>
 
     <div class="filters">
-
-        <button
-            class="active"
-            onclick="setCategory('ALL',this)">
-
-            🎮 Semua
-
-        </button>
-
-        <button
-            onclick="setCategory('MLBB',this)">
-
-            ⚔️ MLBB
-
-        </button>
-
-        <button
-            onclick="setCategory('FF',this)">
-
-            🔥 Free Fire
-
-        </button>
-
-        <button
-            onclick="setCategory('EFOOTBALL',this)">
-
-            ⚽ eFootball
-
-        </button>
-
+        <button class="active" onclick="setCategory('ALL',this)">🎮 Semua</button>
+        <button onclick="setCategory('MLBB',this)">⚔️ MLBB</button>
+        <button onclick="setCategory('FF',this)">🔥 Free Fire</button>
+        <button onclick="setCategory('EFOOTBALL',this)">⚽ eFootball</button>
     </div>
-
 </section>
 
 <!-- =====================================================
@@ -1563,20 +869,8 @@ footer{
 ===================================================== -->
 
 <section class="container">
-
-    <div
-        class="midman-grid"
-        id="midmanGrid">
-    </div>
-
-    <div
-        class="no-result"
-        id="noResult">
-
-        ❌ Tiada Midman dijumpai.
-
-    </div>
-
+    <div class="midman-grid" id="midmanGrid"></div>
+    <div class="no-result" id="noResult">❌ Tiada Midman dijumpai.</div>
 </section>
 
 </main>
@@ -1586,40 +880,22 @@ footer{
 ===================================================== -->
 
 <section id="detailPage">
-
     <div class="detail-container">
-
-        <button
-            class="back"
-            onclick="showHome()">
-
-            ← Kembali
-
-        </button>
-
-        <div
-            class="detail-card"
-            id="detailContent">
-        </div>
-
+        <button class="back" onclick="showHome()">← Kembali</button>
+        <div class="detail-card" id="detailContent"></div>
     </div>
-
 </section>
 
 <!-- =====================================================
      FOOTER
 ===================================================== -->
 
-<footer>
-
-    © 2026 DAMZ MIDMAN · Trusted Malaysia
-
-</footer>
+<footer>© 2026 DAMZ MIDMAN · Trusted Malaysia</footer>
 
 <script>
 
 /* =========================================================
-   DATA MIDMAN 1 - 10
+   DATA MIDMAN 1 - 10 - DAH BUANG deals
 ========================================================= */
 
 const midmanData = [
@@ -1767,24 +1043,18 @@ let currentCategory = "ALL";
 ========================================================= */
 
 function renderMidman(){
-
     const grid = document.getElementById("midmanGrid");
     grid.innerHTML = "";
 
     const search = document.getElementById("searchInput").value.toLowerCase().trim();
 
     const result = midmanData.filter(person => {
-
         const matchName = person.name.toLowerCase().includes(search);
-
         const matchCategory = currentCategory === "ALL" || person.games.includes(currentCategory);
-
         return matchName && matchCategory;
-
     });
 
     result.forEach(person => {
-
         const statusClass = person.status.toLowerCase();
         const gamesHTML = person.games.map(game => `<span class="game">${game}</span>`).join("");
 
@@ -1809,7 +1079,6 @@ function renderMidman(){
 
             <div class="card-info">
                 <div><small>Rating</small><strong>⭐ ${person.rating}</strong></div>
-                <div><small>Deal</small><strong>${person.deals}</strong></div>
                 <div><small>Since</small><strong>${person.since}</strong></div>
             </div>
 
@@ -1873,7 +1142,6 @@ function showDetail(id){
             <h3>📊 Statistik</h3>
             <div class="detail-stats">
                 <div class="detail-stat"><strong>⭐ ${person.rating}</strong><span>Rating</span></div>
-                <div class="detail-stat"><strong>${person.deals}</strong><span>Successful Deals</span></div>
                 <div class="detail-stat"><strong>${person.since}</strong><span>Joined</span></div>
             </div>
         </div>
@@ -1906,7 +1174,6 @@ function showHome(){
 ========================================================= */
 
 function changeLanguage(language, button){
-
     document.querySelectorAll(".lang button").forEach(btn => {btn.classList.remove("active");});
     button.classList.add("active");
 

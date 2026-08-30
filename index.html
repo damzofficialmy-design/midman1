@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DAMZ MIDMAN | Trusted Malaysia</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top, #123b70 0%, #061426 35%, #020812 75%);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND EFFECT */
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#008cff;
+    filter:blur(180px);
+    opacity:.15;
+    top:-200px;
+    left:-150px;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#00c8ff;
+    filter:blur(180px);
+    opacity:.10;
+    bottom:-150px;
+    right:-100px;
+    pointer-events:none;
+}
+
+/* HEADER */
+header{
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(0,153,255,.2);
+    background:rgba(2,10,20,.75);
+    backdrop-filter:blur(12px);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    color:#fff;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#00aaff;
+}
+
+.lang{
+    display:flex;
+    gap:6px;
+}
+
+.lang button{
+    border:1px solid #168cff;
+    background:transparent;
+    color:white;
+    padding:7px 12px;
+    border-radius:7px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.lang button:hover,
+.lang button.active{
+    background:#008cff;
+    box-shadow:0 0 15px rgba(0,140,255,.5);
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:70px 20px 35px;
+}
+
+.hero h1{
+    font-size:clamp(35px,6vw,65px);
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:#00aaff;
+    text-shadow:0 0 25px rgba(0,170,255,.6);
+}
+
+.hero p{
+    margin-top:14px;
+    color:#a9bfd8;
+    font-size:16px;
+}
+
+/* SEARCH */
+.search-box{
+    max-width:600px;
+    margin:25px auto 45px;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px 20px;
+    border-radius:12px;
+    border:1px solid rgba(0,153,255,.5);
+    outline:none;
+    background:rgba(7,25,45,.85);
+    color:white;
+    font-size:15px;
+    box-shadow:0 0 20px rgba(0,140,255,.08);
+}
+
+.search-box input::placeholder{
+    color:#7690aa;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* GRID */
+.midman-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    position:relative;
+    padding:24px;
+    border-radius:18px;
+    background:
+        linear-gradient(145deg,
+        rgba(12,38,68,.95),
+        rgba(3,15,29,.95));
+    border:1px solid rgba(0,153,255,.25);
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35),
+        inset 0 0 20px rgba(0,153,255,.03);
+    transition:.35s;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#008cff;
+    filter:blur(80px);
+    opacity:.12;
+    right:-40px;
+    top:-40px;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#008cff;
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.5),
+        0 0 25px rgba(0,140,255,.15);
+}
+
+/* PROFILE */
+.profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar{
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(135deg,#0077ff,#00cfff);
+    font-size:22px;
+    font-weight:bold;
+    border:3px solid rgba(255,255,255,.15);
+    box-shadow:0 0 20px rgba(0,153,255,.35);
+}
+
+.name{
+    font-size:19px;
+    font-weight:bold;
+}
+
+.role{
+    color:#7fa4c7;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* STATUS */
+.status{
+    margin-top:18px;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:6px 10px;
+    border-radius:20px;
+    background:rgba(0,255,120,.08);
+    color:#4dff9a;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    background:#21ff78;
+    border-radius:50%;
+    box-shadow:0 0 10px #21ff78;
+}
+
+/* INFO */
+.info{
+    margin-top:18px;
+    display:flex;
+    justify-content:space-between;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:15px;
+}
+
+.info div{
+    text-align:center;
+}
+
+.info small{
+    color:#6f89a3;
+    display:block;
+    margin-bottom:5px;
+}
+
+.info strong{
+    color:#fff;
+}
+
+/* BUTTON */
+.whatsapp{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin-top:20px;
+    padding:12px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    background:linear-gradient(135deg,#087f46,#00c86b);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 20px rgba(0,200,100,.25);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    margin-top:70px;
+    padding:25px;
+    color:#607b96;
+    font-size:13px;
+    border-top:1px solid rgba(0,153,255,.12);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .hero{
+        padding-top:50px;
+    }
+
+    .midman-list{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        DAMZ<span>MIDMAN</span>
+    </div>
+
+    <div class="lang">
+        <button class="active" onclick="setLanguage('bm')">BM</button>
+        <button onclick="setLanguage('en')">EN</button>
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        DAMZ <span>MIDMAN</span>
+    </h1>
+
+    <p id="subtitle">
+        Senarai Midman Dipercayai Malaysia
+    </p>
+
+</section>
+
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔎 Cari nama Midman..."
+        onkeyup="searchMidman()"
+    >
+
+</div>
+
+
+<main class="container">
+
+<div class="midman-list" id="midmanList">
+
+
+<!-- MIDMAN 1 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">
+            D
+        </div>
+
+        <div>
+            <div class="name">
+                Damz
+            </div>
+
+            <div class="role">
+                Senior Midman
+            </div>
+        </div>
+
+    </div>
+
+    <div class="status">
+        <span class="dot"></span>
+        <span class="status-text">ONLINE</span>
+    </div>
+
+    <div class="info">
+
+        <div>
+            <small>Rating</small>
+            <strong>⭐ 5.0</strong>
+        </div>
+
+        <div>
+            <small>Deal</small>
+            <strong>250+</strong>
+        </div>
+
+        <div>
+            <small>Since</small>
+            <strong>2025</strong>
+        </div>
+
+    </div>
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/601137851457"
+        target="_blank">
+        WhatsApp Midman
+    </a>
+
+</div>
+
+
+<!-- MIDMAN 2 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">
+            A
+        </div>
+
+        <div>
+            <div class="name">
+                Admin A
+            </div>
+
+            <div class="role">
+                Trusted Midman
+            </div>
+        </div>
+
+    </div>
+
+    <div class="status">
+        <span class="dot"></span>
+        <span class="status-text">ONLINE</span>
+    </div>
+
+    <div class="info">
+
+        <div>
+            <small>Rating</small>
+            <strong>⭐ 4.9</strong>
+        </div>
+
+        <div>
+            <small>Deal</small>
+            <strong>180+</strong>
+        </div>
+
+        <div>
+            <small>Since</small>
+            <strong>2025</strong>
+        </div>
+
+    </div>
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/60123456789"
+        target="_blank">
+        WhatsApp Midman
+    </a>
+
+</div>
+
+
+<!-- MIDMAN 3 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">
+            Z
+        </div>
+
+        <div>
+            <div class="name">
+                Admin Z
+            </div>
+
+            <div class="role">
+                Trusted Midman
+            </div>
+        </div>
+
+    </div>
+
+    <div class="status">
+        <span class="dot"></span>
+        <span class="status-text">ONLINE</span>
+    </div>
+
+    <div class="info">
+
+        <div>
+            <small>Rating</small>
+            <strong>⭐ 4.9</strong>
+        </div>
+
+        <div>
+            <small>Deal</small>
+            <strong>150+</strong>
+        </div>
+
+        <div>
+            <small>Since</small>
+            <strong>2026</strong>
+        </div>
+
+    </div>
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/60198765432"
+        target="_blank">
+        WhatsApp Midman
+    </a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+    © 2026 DAMZ MIDMAN · Trusted Malaysia
+
+</footer>
+
+
+<script>
+
+/* SEARCH */
+
+function searchMidman(){
+
+    let input =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document
+        .querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let name =
+            card
+            .querySelector(".name")
+            .innerText
+            .toLowerCase();
+
+        if(name.includes(input)){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+
+/* LANGUAGE */
+
+function setLanguage(lang){
+
+    let buttons =
+        document.querySelectorAll(".lang button");
+
+    buttons.forEach(btn =>
+        btn.classList.remove("active")
+    );
+
+    event.target.classList.add("active");
+
+    let subtitle =
+        document.getElementById("subtitle");
+
+    let search =
+        document.getElementById("search");
+
+    if(lang === "en"){
+
+        subtitle.innerText =
+            "Trusted Midman List Malaysia";
+
+        search.placeholder =
+            "🔎 Search Midman name...";
+
+        document
+        .querySelectorAll(".whatsapp")
+        .forEach(btn=>{
+            btn.innerText =
+                "WhatsApp Midman";
+        });
+
+    }else{
+
+        subtitle.innerText =
+            "Senarai Midman Dipercayai Malaysia";
+
+        search.placeholder =
+            "🔎 Cari nama Midman...";
+
+        document
+        .querySelectorAll(".whatsapp")
+        .forEach(btn=>{
+            btn.innerText =
+                "WhatsApp Midman";
+        });
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

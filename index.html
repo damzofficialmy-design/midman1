@@ -8,9 +8,6 @@
 <title>DAMZ MIDMAN | Trusted Malaysia</title>
 
 <style>
-/* =========================================================
-   RESET + BACKGROUND + HEADER + HERO + SEMUA LAMA
-========================================================= */
 *{
     margin:0;
     padding:0;
@@ -266,17 +263,27 @@ let currentReviewId = null;
 let selectedStars = 0;
 
 const midmanData = [
-{id:1,name:"Damz",role:"Founder & Senior Midman",image:"images/damz-3d.jpg",status:"ONLINE",rating:"5.0",since:"2025",games:["MLBB","FF","EFOOTBALL"],phone:"601133169293",description:"Berpengalaman dalam urusan midman dan jual beli akaun gaming. Mengutamakan keselamatan serta proses transaksi yang jelas."},
-{id:2,name:"Admin A",role:"Trusted Midman",image:"images/midman2.jpg",status:"ONLINE",rating:"4.9",since:"2025",games:["MLBB","FF","EFOOTBALL"],phone:"60123456789",description:"Midman yang membantu urusan transaksi akaun gaming dengan proses yang mudah dan teratur."},
-{id:3,name:"Admin Z",role:"Trusted Midman",image:"images/midman3.jpg",status:"BUSY",rating:"4.9",since:"2026",games:["MLBB","FF","EFOOTBALL"],phone:"60198765432",description:"Menyediakan perkhidmatan midman untuk beberapa kategori gaming dengan fokus kepada transaksi yang selamat."},
-{id:4,name:"Admin D",role:"Junior Midman",image:"images/midman4.jpg",status:"OFFLINE",rating:"4.8",since:"2026",games:["MLBB","FF","EFOOTBALL"],phone:"60111222333",description:"Membantu pengguna menguruskan transaksi gaming melalui perkhidmatan midman DAMZ."},
-{id:5,name:"Admin F",role:"Trusted Midman",image:"images/midman5.jpg",status:"ONLINE",rating:"4.9",since:"2026",games:["MLBB","FF"],phone:"60110000005",description:"Midman yang fokus kepada urusan akaun Mobile Legends dan Free Fire dengan proses transaksi yang teratur."},
-{id:6,name:"Admin K",role:"Senior Midman",image:"images/midman6.jpg",status:"ONLINE",rating:"5.0",since:"2025",games:["MLBB","EFOOTBALL"],phone:"60110000006",description:"Senior Midman yang berpengalaman dalam mengendalikan transaksi akaun gaming dan membantu memastikan proses berjalan dengan lancar."},
-{id:7,name:"Admin R",role:"Trusted Midman",image:"images/midman7.jpg",status:"BUSY",rating:"4.8",since:"2026",games:["FF","EFOOTBALL"],phone:"60110000007",description:"Menyediakan perkhidmatan midman untuk transaksi Free Fire dan eFootball dengan komunikasi yang jelas."},
-{id:8,name:"Admin M",role:"Trusted Midman",image:"images/midman8.jpg",status:"ONLINE",rating:"4.9",since:"2025",games:["MLBB","FF"],phone:"60110000008",description:"Berpengalaman membantu urusan transaksi gaming dan mengutamakan ketelusan dalam setiap proses."},
-{id:9,name:"Admin S",role:"Senior Midman",image:"images/midman9.jpg",status:"OFFLINE",rating:"5.0",since:"2025",games:["MLBB","FF","EFOOTBALL"],phone:"60110000009",description:"Senior Midman yang membantu menguruskan pelbagai jenis transaksi akaun gaming dengan pengalaman yang luas."},
-{id:10,name:"Admin N",role:"Trusted Midman",image:"images/midman10.jpg",status:"ONLINE",rating:"4.9",since:"2026",games:["MLBB","EFOOTBALL"],phone:"60110000010",description:"Trusted Midman untuk membantu urusan transaksi akaun gaming dengan sistem yang mudah dan teratur."}
+{id:1,name:"Damz",role:"Founder & Senior Midman",image:"images/damz-3d.jpg",status:"ONLINE",since:"2025",games:["MLBB","FF","EFOOTBALL"],phone:"601133169293",description:"Berpengalaman dalam urusan midman dan jual beli akaun gaming. Mengutamakan keselamatan serta proses transaksi yang jelas."},
+{id:2,name:"Admin A",role:"Trusted Midman",image:"images/midman2.jpg",status:"ONLINE",since:"2025",games:["MLBB","FF","EFOOTBALL"],phone:"60123456789",description:"Midman yang membantu urusan transaksi akaun gaming dengan proses yang mudah dan teratur."},
+{id:3,name:"Admin Z",role:"Trusted Midman",image:"images/midman3.jpg",status:"BUSY",since:"2026",games:["MLBB","FF","EFOOTBALL"],phone:"60198765432",description:"Menyediakan perkhidmatan midman untuk beberapa kategori gaming dengan fokus kepada transaksi yang selamat."},
+{id:4,name:"Admin D",role:"Junior Midman",image:"images/midman4.jpg",status:"OFFLINE",since:"2026",games:["MLBB","FF","EFOOTBALL"],phone:"60111222333",description:"Membantu pengguna menguruskan transaksi gaming melalui perkhidmatan midman DAMZ."},
+{id:5,name:"Admin F",role:"Trusted Midman",image:"images/midman5.jpg",status:"ONLINE",since:"2026",games:["MLBB","FF"],phone:"60110000005",description:"Midman yang fokus kepada urusan akaun Mobile Legends dan Free Fire dengan proses transaksi yang teratur."},
+{id:6,name:"Admin K",role:"Senior Midman",image:"images/midman6.jpg",status:"ONLINE",since:"2025",games:["MLBB","EFOOTBALL"],phone:"60110000006",description:"Senior Midman yang berpengalaman dalam mengendalikan transaksi akaun gaming dan membantu memastikan proses berjalan dengan lancar."},
+{id:7,name:"Admin R",role:"Trusted Midman",image:"images/midman7.jpg",status:"BUSY",since:"2026",games:["FF","EFOOTBALL"],phone:"60110000007",description:"Menyediakan perkhidmatan midman untuk transaksi Free Fire dan eFootball dengan komunikasi yang jelas."},
+{id:8,name:"Admin M",role:"Trusted Midman",image:"images/midman8.jpg",status:"ONLINE",since:"2025",games:["MLBB","FF"],phone:"60110000008",description:"Berpengalaman membantu urusan transaksi gaming dan mengutamakan ketelusan dalam setiap proses."},
+{id:9,name:"Admin S",role:"Senior Midman",image:"images/midman9.jpg",status:"OFFLINE",since:"2025",games:["MLBB","FF","EFOOTBALL"],phone:"60110000009",description:"Senior Midman yang membantu menguruskan pelbagai jenis transaksi akaun gaming dengan pengalaman yang luas."},
+{id:10,name:"Admin N",role:"Trusted Midman",image:"images/midman10.jpg",status:"ONLINE",since:"2026",games:["MLBB","EFOOTBALL"],phone:"60110000010",description:"Trusted Midman untuk membantu urusan transaksi akaun gaming dengan sistem yang mudah dan teratur."}
 ];
+
+// FUNCTION BARU: KIRA RATING AUTO
+function getRating(id){
+    const reviews = JSON.parse(localStorage.getItem("midmanReviews") || "[]");
+    const personReviews = reviews.filter(r => r.midmanId === id);
+    if(personReviews.length === 0) return {avg: "0.0", count: 0};
+    const total = personReviews.reduce((sum, r) => sum + r.stars, 0);
+    const avg = (total / personReviews.length).toFixed(1);
+    return {avg: avg, count: personReviews.length};
+}
 
 function renderMidman(){
     const grid = document.getElementById("midmanGrid");
@@ -288,6 +295,7 @@ function renderMidman(){
         return matchName && matchCategory;
     });
     result.forEach(person => {
+        const ratingData = getRating(person.id);
         const statusClass = person.status.toLowerCase();
         const gamesHTML = person.games.map(game => `<span class="game">${game}</span>`).join("");
         const card = document.createElement("div");
@@ -303,7 +311,7 @@ function renderMidman(){
             <div class="status ${statusClass}"><span class="dot"></span>${person.status}</div>
             <div class="games">${gamesHTML}</div>
             <div class="card-info">
-                <div><small>Rating</small><strong>⭐ ${person.rating}</strong></div>
+                <div><small>Rating</small><strong>⭐ ${ratingData.avg} (${ratingData.count})</strong></div>
                 <div><small>Since</small><strong>${person.since}</strong></div>
             </div>
             <div class="buttons">
@@ -328,10 +336,10 @@ function setCategory(category, button){
 function showDetail(id){
     const person = midmanData.find(item => item.id === id);
     if(!person) return;
+    const ratingData = getRating(person.id);
     const statusClass = person.status.toLowerCase();
     const gamesHTML = person.games.map(game => `<span>${game}</span>`).join("");
     
-    // Dapatkan review untuk midman ini
     const allReviews = JSON.parse(localStorage.getItem("midmanReviews") || "[]");
     const personReviews = allReviews.filter(r => r.midmanId === id);
     const reviewHTML = personReviews.length > 0 ? personReviews.map(r => `
@@ -361,7 +369,7 @@ function showDetail(id){
         <div class="detail-section">
             <h3>📊 Statistik</h3>
             <div class="detail-stats">
-                <div class="detail-stat"><strong>⭐ ${person.rating}</strong><span>Rating</span></div>
+                <div class="detail-stat"><strong>⭐ ${ratingData.avg}</strong><span>${ratingData.count} Review</span></div>
                 <div class="detail-stat"><strong>${person.since}</strong><span>Joined</span></div>
             </div>
         </div>
@@ -370,7 +378,7 @@ function showDetail(id){
             <p>${person.description}</p>
         </div>
         <div class="detail-section">
-            <h3>💬 Review Pelanggan (${personReviews.length})</h3>
+            <h3>💬 Review Pelanggan (${ratingData.count})</h3>
             <button class="btn review-btn" onclick="openPopup(${person.id})" style="margin-bottom:15px;width:100%;">+ Beri Review</button>
             <div class="review-list">${reviewHTML}</div>
         </div>
@@ -429,7 +437,7 @@ function submitReview(){
     localStorage.setItem("midmanReviews", JSON.stringify(reviews));
     alert("Terima kasih! Review anda telah dihantar ✅");
     closePopup();
-    showDetail(currentReviewId); // refresh detail page
+    showDetail(currentReviewId);
 }
 
 function changeLanguage(language, button){

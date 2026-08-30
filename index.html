@@ -34,7 +34,6 @@ body{
     overflow-x:hidden;
 }
 
-
 /* =========================================================
    BACKGROUND GRID
 ========================================================= */
@@ -68,7 +67,6 @@ body::before{
     z-index:-5;
 }
 
-
 /* =========================================================
    GLOW ORBS
 ========================================================= */
@@ -96,7 +94,6 @@ body::before{
     right:-120px;
     bottom:5%;
 }
-
 
 /* =========================================================
    PARTICLES
@@ -142,7 +139,6 @@ body::before{
     }
 
 }
-
 
 /* =========================================================
    HEADER
@@ -206,7 +202,6 @@ header{
     gap:15px;
 }
 
-
 /* =========================================================
    LANGUAGE
 ========================================================= */
@@ -248,7 +243,6 @@ header{
         0 0 15px
         rgba(0,140,255,.5);
 }
-
 
 /* =========================================================
    HERO
@@ -354,7 +348,6 @@ header{
     font-size:15px;
 }
 
-
 /* =========================================================
    CONTROLS
 ========================================================= */
@@ -366,7 +359,6 @@ header{
 
     margin:auto;
 }
-
 
 /* SEARCH */
 
@@ -432,7 +424,6 @@ header{
 
     font-size:18px;
 }
-
 
 /* =========================================================
    FILTERS
@@ -500,7 +491,6 @@ header{
         rgba(0,153,255,.25);
 }
 
-
 /* =========================================================
    MAIN CONTAINER
 ========================================================= */
@@ -525,7 +515,6 @@ header{
 
     gap:20px;
 }
-
 
 /* =========================================================
    MIDMAN CARD
@@ -631,7 +620,6 @@ header{
         rgba(0,140,255,.14);
 }
 
-
 /* PROFILE */
 
 .profile{
@@ -686,7 +674,6 @@ header{
 
     margin-top:5px;
 }
-
 
 /* =========================================================
    STATUS
@@ -790,7 +777,6 @@ header{
     background:#ff5065;
 }
 
-
 /* =========================================================
    GAME TAGS
 ========================================================= */
@@ -829,7 +815,6 @@ header{
         1px solid
         rgba(0,140,255,.16);
 }
-
 
 /* =========================================================
    CARD INFO
@@ -875,7 +860,6 @@ header{
 .card-info strong{
     font-size:13px;
 }
-
 
 /* =========================================================
    BUTTONS
@@ -963,7 +947,6 @@ header{
         rgba(0,200,100,.25);
 }
 
-
 /* =========================================================
    NO RESULT
 ========================================================= */
@@ -980,7 +963,6 @@ header{
 
     font-size:15px;
 }
-
 
 /* =========================================================
    DETAIL PAGE
@@ -1278,7 +1260,6 @@ header{
         rgba(0,200,100,.25);
 }
 
-
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -1301,7 +1282,6 @@ footer{
         1px solid
         rgba(0,153,255,.12);
 }
-
 
 /* =========================================================
    MOBILE
@@ -1336,11 +1316,6 @@ footer{
 
         width:90px;
         height:90px;
-    }
-
-    .stats{
-
-        grid-template-columns:1fr;
     }
 
     .midman-grid{
@@ -1381,8 +1356,9 @@ footer{
         height:115px;
     }
 
-}
+    .particles{display:none} /* bagi laju kat phone */
 
+}
 
 /* =========================================================
    SMALL MOBILE
@@ -1413,9 +1389,7 @@ footer{
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      BACKGROUND
@@ -1452,7 +1426,6 @@ footer{
 
 </div>
 
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
@@ -1473,7 +1446,6 @@ footer{
         </div>
 
     </div>
-
 
     <div class="header-right">
 
@@ -1500,14 +1472,11 @@ footer{
 
 </header>
 
-
-
 <!-- =====================================================
      HOME PAGE
 ===================================================== -->
 
 <main id="homePage">
-
 
 <!-- HERO -->
 
@@ -1518,14 +1487,12 @@ footer{
         src="images/damz-3d.jpg"
         alt="DAMZ Logo">
 
-
     <h1>
 
         DAMZ
         <span>MIDMAN</span>
 
     </h1>
-
 
     <p id="heroText">
 
@@ -1536,64 +1503,11 @@ footer{
 
 </section>
 
-
-
-<!-- =====================================================
-     STATS
-===================================================== -->
-
-<section class="stats">
-
-
-    <div class="stat">
-
-        <strong id="totalMidman">
-            0
-        </strong>
-
-        <span id="totalLabel">
-            Jumlah Midman
-        </span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>
-            ⭐ 5.0
-        </strong>
-
-        <span id="ratingLabel">
-            Rating Keseluruhan
-        </span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>
-            100%
-        </strong>
-
-        <span>
-            Trusted
-        </span>
-
-    </div>
-
-
-</section>
-
-
-
 <!-- =====================================================
      SEARCH + FILTER
 ===================================================== -->
 
 <section class="controls">
-
 
     <div class="search">
 
@@ -1609,10 +1523,7 @@ footer{
 
     </div>
 
-
-
     <div class="filters">
-
 
         <button
             class="active"
@@ -1622,14 +1533,12 @@ footer{
 
         </button>
 
-
         <button
             onclick="setCategory('MLBB',this)">
 
             ⚔️ MLBB
 
         </button>
-
 
         <button
             onclick="setCategory('FF',this)">
@@ -1638,7 +1547,6 @@ footer{
 
         </button>
 
-
         <button
             onclick="setCategory('EFOOTBALL',this)">
 
@@ -1646,12 +1554,9 @@ footer{
 
         </button>
 
-
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      MIDMAN GRID
@@ -1664,7 +1569,6 @@ footer{
         id="midmanGrid">
     </div>
 
-
     <div
         class="no-result"
         id="noResult">
@@ -1675,10 +1579,7 @@ footer{
 
 </section>
 
-
 </main>
-
-
 
 <!-- =====================================================
      DETAIL PAGE
@@ -1686,9 +1587,7 @@ footer{
 
 <section id="detailPage">
 
-
     <div class="detail-container">
-
 
         <button
             class="back"
@@ -1698,18 +1597,14 @@ footer{
 
         </button>
 
-
         <div
             class="detail-card"
             id="detailContent">
         </div>
 
-
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      FOOTER
@@ -1721,366 +1616,155 @@ footer{
 
 </footer>
 
-
-
 <script>
-
 
 /* =========================================================
    DATA MIDMAN 1 - 10
-
-   Anda hanya perlu ubah bahagian ini.
 ========================================================= */
 
 const midmanData = [
 
-
-/* =====================================================
-   MIDMAN 1
-===================================================== */
-
 {
     id:1,
-
     name:"Damz",
-
     role:"Founder & Senior Midman",
-
     image:"images/damz-3d.jpg",
-
     status:"ONLINE",
-
     rating:"5.0",
-
     deals:"250+",
-
     since:"2025",
-
-    games:[
-        "MLBB",
-        "FF",
-        "EFOOTBALL"
-    ],
-
+    games:["MLBB","FF","EFOOTBALL"],
     phone:"601133169293",
-
-    description:
-    "Berpengalaman dalam urusan midman dan jual beli akaun gaming. Mengutamakan keselamatan serta proses transaksi yang jelas."
+    description:"Berpengalaman dalam urusan midman dan jual beli akaun gaming. Mengutamakan keselamatan serta proses transaksi yang jelas."
 },
-
-
-
-/* =====================================================
-   MIDMAN 2
-===================================================== */
 
 {
     id:2,
-
     name:"Admin A",
-
     role:"Trusted Midman",
-
     image:"images/midman2.jpg",
-
     status:"ONLINE",
-
     rating:"4.9",
-
     deals:"180+",
-
     since:"2025",
-
-    games:[
-        "MLBB",
-        "FF",
-        "EFOOTBALL"
-    ],
-
+    games:["MLBB","FF","EFOOTBALL"],
     phone:"60123456789",
-
-    description:
-    "Midman yang membantu urusan transaksi akaun gaming dengan proses yang mudah dan teratur."
+    description:"Midman yang membantu urusan transaksi akaun gaming dengan proses yang mudah dan teratur."
 },
-
-
-
-/* =====================================================
-   MIDMAN 3
-===================================================== */
 
 {
     id:3,
-
     name:"Admin Z",
-
     role:"Trusted Midman",
-
     image:"images/midman3.jpg",
-
     status:"BUSY",
-
     rating:"4.9",
-
     deals:"150+",
-
     since:"2026",
-
-    games:[
-        "MLBB",
-        "FF",
-        "EFOOTBALL"
-    ],
-
+    games:["MLBB","FF","EFOOTBALL"],
     phone:"60198765432",
-
-    description:
-    "Menyediakan perkhidmatan midman untuk beberapa kategori gaming dengan fokus kepada transaksi yang selamat."
+    description:"Menyediakan perkhidmatan midman untuk beberapa kategori gaming dengan fokus kepada transaksi yang selamat."
 },
-
-
-
-/* =====================================================
-   MIDMAN 4
-===================================================== */
 
 {
     id:4,
-
     name:"Admin D",
-
     role:"Junior Midman",
-
     image:"images/midman4.jpg",
-
     status:"OFFLINE",
-
     rating:"4.8",
-
     deals:"90+",
-
     since:"2026",
-
-    games:[
-        "MLBB",
-        "FF",
-        "EFOOTBALL"
-    ],
-
+    games:["MLBB","FF","EFOOTBALL"],
     phone:"60111222333",
-
-    description:
-    "Membantu pengguna menguruskan transaksi gaming melalui perkhidmatan midman DAMZ."
+    description:"Membantu pengguna menguruskan transaksi gaming melalui perkhidmatan midman DAMZ."
 },
-
-
-
-/* =====================================================
-   MIDMAN 5
-===================================================== */
 
 {
     id:5,
-
     name:"Admin F",
-
     role:"Trusted Midman",
-
     image:"images/midman5.jpg",
-
     status:"ONLINE",
-
     rating:"4.9",
-
     deals:"130+",
-
     since:"2026",
-
-    games:[
-        "MLBB",
-        "FF"
-    ],
-
+    games:["MLBB","FF"],
     phone:"60110000005",
-
-    description:
-    "Midman yang fokus kepada urusan akaun Mobile Legends dan Free Fire dengan proses transaksi yang teratur."
+    description:"Midman yang fokus kepada urusan akaun Mobile Legends dan Free Fire dengan proses transaksi yang teratur."
 },
-
-
-
-/* =====================================================
-   MIDMAN 6
-===================================================== */
 
 {
     id:6,
-
     name:"Admin K",
-
     role:"Senior Midman",
-
     image:"images/midman6.jpg",
-
     status:"ONLINE",
-
     rating:"5.0",
-
     deals:"210+",
-
     since:"2025",
-
-    games:[
-        "MLBB",
-        "EFOOTBALL"
-    ],
-
+    games:["MLBB","EFOOTBALL"],
     phone:"60110000006",
-
-    description:
-    "Senior Midman yang berpengalaman dalam mengendalikan transaksi akaun gaming dan membantu memastikan proses berjalan dengan lancar."
+    description:"Senior Midman yang berpengalaman dalam mengendalikan transaksi akaun gaming dan membantu memastikan proses berjalan dengan lancar."
 },
-
-
-
-/* =====================================================
-   MIDMAN 7
-===================================================== */
 
 {
     id:7,
-
     name:"Admin R",
-
     role:"Trusted Midman",
-
     image:"images/midman7.jpg",
-
     status:"BUSY",
-
     rating:"4.8",
-
     deals:"120+",
-
     since:"2026",
-
-    games:[
-        "FF",
-        "EFOOTBALL"
-    ],
-
+    games:["FF","EFOOTBALL"],
     phone:"60110000007",
-
-    description:
-    "Menyediakan perkhidmatan midman untuk transaksi Free Fire dan eFootball dengan komunikasi yang jelas."
+    description:"Menyediakan perkhidmatan midman untuk transaksi Free Fire dan eFootball dengan komunikasi yang jelas."
 },
-
-
-
-/* =====================================================
-   MIDMAN 8
-===================================================== */
 
 {
     id:8,
-
     name:"Admin M",
-
     role:"Trusted Midman",
-
     image:"images/midman8.jpg",
-
     status:"ONLINE",
-
     rating:"4.9",
-
     deals:"160+",
-
     since:"2025",
-
-    games:[
-        "MLBB",
-        "FF"
-    ],
-
+    games:["MLBB","FF"],
     phone:"60110000008",
-
-    description:
-    "Berpengalaman membantu urusan transaksi gaming dan mengutamakan ketelusan dalam setiap proses."
+    description:"Berpengalaman membantu urusan transaksi gaming dan mengutamakan ketelusan dalam setiap proses."
 },
-
-
-
-/* =====================================================
-   MIDMAN 9
-===================================================== */
 
 {
     id:9,
-
     name:"Admin S",
-
     role:"Senior Midman",
-
     image:"images/midman9.jpg",
-
     status:"OFFLINE",
-
     rating:"5.0",
-
     deals:"200+",
-
     since:"2025",
-
-    games:[
-        "MLBB",
-        "FF",
-        "EFOOTBALL"
-    ],
-
+    games:["MLBB","FF","EFOOTBALL"],
     phone:"60110000009",
-
-    description:
-    "Senior Midman yang membantu menguruskan pelbagai jenis transaksi akaun gaming dengan pengalaman yang luas."
+    description:"Senior Midman yang membantu menguruskan pelbagai jenis transaksi akaun gaming dengan pengalaman yang luas."
 },
-
-
-
-/* =====================================================
-   MIDMAN 10
-===================================================== */
 
 {
     id:10,
-
     name:"Admin N",
-
     role:"Trusted Midman",
-
     image:"images/midman10.jpg",
-
     status:"ONLINE",
-
     rating:"4.9",
-
     deals:"110+",
-
     since:"2026",
-
-    games:[
-        "MLBB",
-        "EFOOTBALL"
-    ],
-
+    games:["MLBB","EFOOTBALL"],
     phone:"60110000010",
-
-    description:
-    "Trusted Midman untuk membantu urusan transaksi akaun gaming dengan sistem yang mudah dan teratur."
+    description:"Trusted Midman untuk membantu urusan transaksi akaun gaming dengan sistem yang mudah dan teratur."
 }
 
 ];
-
-
 
 /* =========================================================
    CURRENT CATEGORY
@@ -2088,715 +1772,168 @@ const midmanData = [
 
 let currentCategory = "ALL";
 
-
-
 /* =========================================================
    RENDER MIDMAN
 ========================================================= */
 
 function renderMidman(){
 
-    const grid =
-        document.getElementById(
-            "midmanGrid"
-        );
-
-
+    const grid = document.getElementById("midmanGrid");
     grid.innerHTML = "";
 
+    const search = document.getElementById("searchInput").value.toLowerCase().trim();
 
-    const search =
-        document
-        .getElementById(
-            "searchInput"
-        )
-        .value
-        .toLowerCase()
-        .trim();
+    const result = midmanData.filter(person => {
 
+        const matchName = person.name.toLowerCase().includes(search);
 
-    const result =
-        midmanData.filter(person => {
+        const matchCategory = currentCategory === "ALL" || person.games.includes(currentCategory);
 
-
-            const matchName =
-                person.name
-                .toLowerCase()
-                .includes(search);
-
-
-            const matchCategory =
-
-                currentCategory === "ALL"
-
-                ||
-
-                person.games.includes(
-                    currentCategory
-                );
-
-
-            return (
-                matchName &&
-                matchCategory
-            );
-
-        });
-
-
-
-    result.forEach(person => {
-
-
-        const statusClass =
-            person.status
-            .toLowerCase();
-
-
-        const gamesHTML =
-
-            person.games
-            .map(game =>
-
-                `<span class="game">
-                    ${game}
-                </span>`
-
-            )
-            .join("");
-
-
-        const card =
-            document.createElement(
-                "div"
-            );
-
-
-        card.className =
-            "card";
-
-
-        card.innerHTML = `
-
-
-            <div class="profile">
-
-
-                <img
-
-                    class="avatar"
-
-                    src="${person.image}"
-
-                    alt="${person.name}"
-
-                    onerror="
-                        this.src='images/damz-3d.jpg'
-                    "
-
-                >
-
-
-                <div class="profile-info">
-
-
-                    <div class="name">
-
-                        ${person.name}
-
-                    </div>
-
-
-                    <div class="role">
-
-                        ${person.role}
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="status ${statusClass}">
-
-                <span class="dot"></span>
-
-                ${person.status}
-
-            </div>
-
-
-
-            <div class="games">
-
-                ${gamesHTML}
-
-            </div>
-
-
-
-            <div class="card-info">
-
-
-                <div>
-
-                    <small>
-                        Rating
-                    </small>
-
-                    <strong>
-                        ⭐ ${person.rating}
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <small>
-                        Deal
-                    </small>
-
-                    <strong>
-                        ${person.deals}
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <small>
-                        Since
-                    </small>
-
-                    <strong>
-                        ${person.since}
-                    </strong>
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="buttons">
-
-
-                <button
-
-                    class="btn detail-btn"
-
-                    onclick="
-                        showDetail(${person.id})
-                    ">
-
-                    Lihat Profil
-
-                </button>
-
-
-                <a
-
-                    class="btn whatsapp"
-
-                    href="
-                        https://wa.me/${person.phone}
-                    "
-
-                    target="_blank">
-
-                    WhatsApp
-
-                </a>
-
-
-            </div>
-
-        `;
-
-
-        grid.appendChild(card);
+        return matchName && matchCategory;
 
     });
 
+    result.forEach(person => {
 
+        const statusClass = person.status.toLowerCase();
+        const gamesHTML = person.games.map(game => `<span class="game">${game}</span>`).join("");
 
-    document
-    .getElementById("noResult")
-    .style.display =
+        const card = document.createElement("div");
+        card.className = "card";
 
-        result.length === 0
+        card.innerHTML = `
+            <div class="profile">
+                <img class="avatar" src="${person.image}" alt="${person.name}" onerror="this.src='images/damz-3d.jpg'">
+                <div class="profile-info">
+                    <div class="name">${person.name}</div>
+                    <div class="role">${person.role}</div>
+                </div>
+            </div>
 
-        ? "block"
+            <div class="status ${statusClass}">
+                <span class="dot"></span>
+                ${person.status}
+            </div>
 
-        : "none";
+            <div class="games">${gamesHTML}</div>
 
+            <div class="card-info">
+                <div><small>Rating</small><strong>⭐ ${person.rating}</strong></div>
+                <div><small>Deal</small><strong>${person.deals}</strong></div>
+                <div><small>Since</small><strong>${person.since}</strong></div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn detail-btn" onclick="showDetail(${person.id})">Lihat Profil</button>
+                <a class="btn whatsapp" href="https://wa.me/${person.phone}" target="_blank">WhatsApp</a>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    document.getElementById("noResult").style.display = result.length === 0 ? "block" : "none";
 }
-
-
 
 /* =========================================================
    SEARCH
 ========================================================= */
 
 function filterMidman(){
-
     renderMidman();
-
 }
-
-
 
 /* =========================================================
    CATEGORY FILTER
 ========================================================= */
 
-function setCategory(
-    category,
-    button
-){
-
-    currentCategory =
-        category;
-
-
-    document
-    .querySelectorAll(
-        ".filters button"
-    )
-    .forEach(btn => {
-
-        btn.classList.remove(
-            "active"
-        );
-
-    });
-
-
-    button.classList.add(
-        "active"
-    );
-
-
+function setCategory(category, button){
+    currentCategory = category;
+    document.querySelectorAll(".filters button").forEach(btn => {btn.classList.remove("active");});
+    button.classList.add("active");
     renderMidman();
-
 }
-
-
 
 /* =========================================================
    SHOW DETAIL
 ========================================================= */
 
 function showDetail(id){
-
-    const person =
-        midmanData.find(
-            item =>
-                item.id === id
-        );
-
-
+    const person = midmanData.find(item => item.id === id);
     if(!person) return;
 
+    const statusClass = person.status.toLowerCase();
+    const gamesHTML = person.games.map(game => `<span>${game}</span>`).join("");
 
-    const statusClass =
-        person.status
-        .toLowerCase();
-
-
-    const gamesHTML =
-
-        person.games
-        .map(game =>
-
-            `<span>
-                ${game}
-            </span>`
-
-        )
-        .join("");
-
-
-    document
-    .getElementById(
-        "detailContent"
-    )
-    .innerHTML = `
-
-
+    document.getElementById("detailContent").innerHTML = `
         <div class="detail-top">
-
-
-            <img
-
-                class="detail-avatar"
-
-                src="${person.image}"
-
-                alt="${person.name}"
-
-                onerror="
-                    this.src='images/damz-3d.jpg'
-                "
-
-            >
-
-
+            <img class="detail-avatar" src="${person.image}" alt="${person.name}" onerror="this.src='images/damz-3d.jpg'">
             <div>
-
-
-                <div class="detail-name">
-
-                    ${person.name}
-
-                </div>
-
-
-                <div class="detail-role">
-
-                    ${person.role}
-
-                </div>
-
-
-                <div class="
-                    status
-                    ${statusClass}
-                ">
-
-                    <span class="dot"></span>
-
-                    ${person.status}
-
-                </div>
-
-
+                <div class="detail-name">${person.name}</div>
+                <div class="detail-role">${person.role}</div>
+                <div class="status ${statusClass}"><span class="dot"></span>${person.status}</div>
             </div>
-
-
         </div>
 
-
-
         <div class="detail-section">
-
-
-            <h3>
-
-                🎮 Kategori Game
-
-            </h3>
-
-
-            <div class="detail-games">
-
-                ${gamesHTML}
-
-            </div>
-
-
+            <h3>🎮 Kategori Game</h3>
+            <div class="detail-games">${gamesHTML}</div>
         </div>
 
-
-
         <div class="detail-section">
-
-
-            <h3>
-
-                📊 Statistik
-
-            </h3>
-
-
+            <h3>📊 Statistik</h3>
             <div class="detail-stats">
-
-
-                <div class="detail-stat">
-
-                    <strong>
-
-                        ⭐ ${person.rating}
-
-                    </strong>
-
-                    <span>
-
-                        Rating
-
-                    </span>
-
-                </div>
-
-
-                <div class="detail-stat">
-
-                    <strong>
-
-                        ${person.deals}
-
-                    </strong>
-
-                    <span>
-
-                        Successful Deals
-
-                    </span>
-
-                </div>
-
-
-                <div class="detail-stat">
-
-                    <strong>
-
-                        ${person.since}
-
-                    </strong>
-
-                    <span>
-
-                        Joined
-
-                    </span>
-
-                </div>
-
-
+                <div class="detail-stat"><strong>⭐ ${person.rating}</strong><span>Rating</span></div>
+                <div class="detail-stat"><strong>${person.deals}</strong><span>Successful Deals</span></div>
+                <div class="detail-stat"><strong>${person.since}</strong><span>Joined</span></div>
             </div>
-
-
         </div>
-
-
 
         <div class="detail-section">
-
-
-            <h3>
-
-                🛡️ Tentang Midman
-
-            </h3>
-
-
-            <p>
-
-                ${person.description}
-
-            </p>
-
-
+            <h3>🛡️ Tentang Midman</h3>
+            <p>${person.description}</p>
         </div>
 
-
-
-        <a
-
-            class="detail-contact"
-
-            href="
-                https://wa.me/${person.phone}
-            "
-
-            target="_blank">
-
-            💬 Hubungi
-            ${person.name}
-            melalui WhatsApp
-
-        </a>
-
+        <a class="detail-contact" href="https://wa.me/${person.phone}" target="_blank">💬 Hubungi ${person.name} melalui WhatsApp</a>
     `;
 
-
-    document
-    .getElementById(
-        "homePage"
-    )
-    .style.display = "none";
-
-
-    document
-    .getElementById(
-        "detailPage"
-    )
-    .style.display = "block";
-
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("detailPage").style.display = "block";
+    window.scrollTo({top:0, behavior:"smooth"});
 }
-
-
 
 /* =========================================================
    SHOW HOME
 ========================================================= */
 
 function showHome(){
-
-    document
-    .getElementById(
-        "detailPage"
-    )
-    .style.display = "none";
-
-
-    document
-    .getElementById(
-        "homePage"
-    )
-    .style.display = "block";
-
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
+    document.getElementById("detailPage").style.display = "none";
+    document.getElementById("homePage").style.display = "block";
+    window.scrollTo({top:0, behavior:"smooth"});
 }
-
-
 
 /* =========================================================
    LANGUAGE
 ========================================================= */
 
-function changeLanguage(
-    language,
-    button
-){
+function changeLanguage(language, button){
 
+    document.querySelectorAll(".lang button").forEach(btn => {btn.classList.remove("active");});
+    button.classList.add("active");
 
-    document
-    .querySelectorAll(
-        ".lang button"
-    )
-    .forEach(btn => {
-
-        btn.classList.remove(
-            "active"
-        );
-
-    });
-
-
-    button.classList.add(
-        "active"
-    );
-
-
-    const heroText =
-        document.getElementById(
-            "heroText"
-        );
-
-
-    const search =
-        document.getElementById(
-            "searchInput"
-        );
-
-
-    const noResult =
-        document.getElementById(
-            "noResult"
-        );
-
-
-    const totalLabel =
-        document.getElementById(
-            "totalLabel"
-        );
-
-
-    const ratingLabel =
-        document.getElementById(
-            "ratingLabel"
-        );
-
-
+    const heroText = document.getElementById("heroText");
+    const search = document.getElementById("searchInput");
+    const noResult = document.getElementById("noResult");
 
     if(language === "en"){
-
-
-        heroText.innerText =
-            "Trusted Midman list for gaming account transactions in Malaysia.";
-
-
-        search.placeholder =
-            "Search Midman name...";
-
-
-        noResult.innerText =
-            "❌ No Midman found.";
-
-
-        totalLabel.innerText =
-            "Total Midman";
-
-
-        ratingLabel.innerText =
-            "Overall Rating";
-
-
+        heroText.innerText = "Trusted Midman list for gaming account transactions in Malaysia.";
+        search.placeholder = "Search Midman name...";
+        noResult.innerText = "❌ No Midman found.";
     }else{
-
-
-        heroText.innerText =
-            "Senarai Midman dipercayai untuk urusan jual beli akaun gaming di Malaysia.";
-
-
-        search.placeholder =
-            "Cari nama Midman...";
-
-
-        noResult.innerText =
-            "❌ Tiada Midman dijumpai.";
-
-
-        totalLabel.innerText =
-            "Jumlah Midman";
-
-
-        ratingLabel.innerText =
-            "Rating Keseluruhan";
-
+        heroText.innerText = "Senarai Midman dipercayai untuk urusan jual beli akaun gaming di Malaysia.";
+        search.placeholder = "Cari nama Midman...";
+        noResult.innerText = "❌ Tiada Midman dijumpai.";
     }
-
 }
-
-
-
-/* =========================================================
-   TOTAL MIDMAN
-========================================================= */
-
-document
-.getElementById(
-    "totalMidman"
-)
-.innerText =
-    midmanData.length;
-
-
 
 /* =========================================================
    START WEBSITE

@@ -95,15 +95,13 @@ header{position:sticky;top:0;z-index:999;height:72px;display:flex;align-items:ce
 .card-info div{text-align:center;}
 .card-info small{display:block;color:#64829d;font-size:10px;margin-bottom:5px;}
 .card-info strong{font-size:13px;}
-.buttons{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:18px;position:relative;z-index:3;}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px;position:relative;z-index:3;} /* TUKAR JADI 2 BUTTON SAHAJA */
 .btn{border:0;cursor:pointer;padding:11px 8px;border-radius:9px;color:#fff;font-weight:bold;text-decoration:none;text-align:center;font-size:12px;transition:.25s;}
 .btn:hover{transform:translateY(-2px);}
 .detail-btn{background:rgba(0,130,230,.15);border:1px solid rgba(0,153,255,.3);}
 .detail-btn:hover{background:rgba(0,130,230,.3);box-shadow:0 0 15px rgba(0,140,255,.12);}
 .whatsapp{background:linear-gradient(135deg, #078044, #00c76b);}
 .whatsapp:hover{box-shadow:0 0 17px rgba(0,200,100,.25);}
-.review-btn{background:linear-gradient(135deg, #ff9500, #ffb700);}
-.review-btn:hover{box-shadow:0 0 17px rgba(255,183,0,.25);}
 .no-result{display:none;text-align:center;padding:55px 10px;color:#718da7;font-size:15px;}
 #detailPage{display:none;min-height:calc(100vh - 72px);padding:50px 20px;}
 .detail-container{width:90%;max-width:850px;margin:auto;}
@@ -128,30 +126,6 @@ header{position:sticky;top:0;z-index:999;height:72px;display:flex;align-items:ce
 .detail-contact:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(0,200,100,.25);}
 footer{margin-top:70px;padding:28px 20px;text-align:center;color:#607b96;font-size:12px;border-top:1px solid rgba(0,153,255,.12);}
 
-/* POPUP REVIEW */
-.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:1000;align-items:center;justify-content:center;padding:20px;}
-.popup{background:linear-gradient(145deg, rgba(11,40,70,.98), rgba(2,14,28,.98));border:1px solid rgba(0,153,255,.3);border-radius:20px;padding:25px;width:100%;max-width:500px;box-shadow:0 25px 70px rgba(0,0,0,.6);animation:popupIn .3s ease;}
-@keyframes popupIn{from{transform:scale(.8); opacity:0;}to{transform:scale(1); opacity:1;}}
-.popup h3{color:#00aaff;margin-bottom:15px;font-size:20px;}
-.popup label{display:block;margin-top:12px;margin-bottom:5px;color:#9db9d4;font-size:13px;}
-.popup input, .popup textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,153,255,.3);background:rgba(3,18,33,.85);color:#fff;font-size:14px;outline:none;}
-.popup textarea{resize:vertical;min-height:80px;}
-.stars{display:flex;gap:5px;font-size:28px;cursor:pointer;}
-.star{color:#555;transition:.2s;}
-.star.active{color:#ffb700;text-shadow:0 0 10px #ffb700;}
-.popup-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;}
-.btn-submit{background:linear-gradient(135deg, #078044, #00c76b);}
-.btn-cancel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);}
-
-/* REVIEW LIST */
-.review-list{margin-top:15px;}
-.review-item{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:15px;margin-bottom:12px;}
-.review-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
-.review-name{font-weight:bold;color:#00aaff;}
-.review-date{font-size:11px;color:#708ba5;}
-.review-stars{color:#ffb700;font-size:14px;margin-bottom:5px;}
-.review-text{color:#c8d9e8;font-size:13px;line-height:1.6;}
-
 @media(max-width:600px){
     header{height:65px;padding:0 5%;}
     .brand img{width:38px;height:38px;}
@@ -166,6 +140,7 @@ footer{margin-top:70px;padding:28px 20px;text-align:center;color:#607b96;font-si
     .buttons{grid-template-columns:1fr;}
     .detail-avatar{width:115px;height:115px;}
     .particles{display:none}
+}
 </style>
 
 </head>
@@ -233,34 +208,9 @@ footer{margin-top:70px;padding:28px 20px;text-align:center;color:#607b96;font-si
 
 <footer>© 2026 DAMZ MIDMAN · Trusted Malaysia</footer>
 
-<!-- POPUP REVIEW -->
-<div class="popup-overlay" id="reviewPopup">
-    <div class="popup">
-        <h3 id="popupTitle">Beri Review</h3>
-        <label>Rating</label>
-        <div class="stars" id="starRating">
-            <span class="star" data-value="1">★</span>
-            <span class="star" data-value="2">★</span>
-            <span class="star" data-value="3">★</span>
-            <span class="star" data-value="4">★</span>
-            <span class="star" data-value="5">★</span>
-        </div>
-        <label>Nama Anda</label>
-        <input type="text" id="reviewName" placeholder="Cth: Ali">
-        <label>Review</label>
-        <textarea id="reviewText" placeholder="Bagaimana pengalaman anda dengan midman ini?"></textarea>
-        <div class="popup-buttons">
-            <button class="btn btn-cancel" onclick="closePopup()">Batal</button>
-            <button class="btn btn-submit" onclick="submitReview()">Hantar Review</button>
-        </div>
-    </div>
-</div>
-
 <script>
 
 let currentCategory = "ALL";
-let currentReviewId = null;
-let selectedStars = 0;
 
 const midmanData = [
 {id:1,name:"Damz",role:"Founder & Senior Midman",image:"images/damz-3d.jpg",status:"ONLINE",since:"2025",games:["MLBB","FF","EFOOTBALL"],phone:"601133169293",description:"Berpengalaman dalam urusan midman dan jual beli akaun gaming. Mengutamakan keselamatan serta proses transaksi yang jelas."},
@@ -275,16 +225,6 @@ const midmanData = [
 {id:10,name:"Admin N",role:"Trusted Midman",image:"images/midman10.jpg",status:"ONLINE",since:"2026",games:["MLBB","EFOOTBALL"],phone:"60110000010",description:"Trusted Midman untuk membantu urusan transaksi akaun gaming dengan sistem yang mudah dan teratur."}
 ];
 
-// FUNCTION BARU: KIRA RATING AUTO
-function getRating(id){
-    const reviews = JSON.parse(localStorage.getItem("midmanReviews") || "[]");
-    const personReviews = reviews.filter(r => r.midmanId === id);
-    if(personReviews.length === 0) return {avg: "0.0", count: 0};
-    const total = personReviews.reduce((sum, r) => sum + r.stars, 0);
-    const avg = (total / personReviews.length).toFixed(1);
-    return {avg: avg, count: personReviews.length};
-}
-
 function renderMidman(){
     const grid = document.getElementById("midmanGrid");
     grid.innerHTML = "";
@@ -295,7 +235,6 @@ function renderMidman(){
         return matchName && matchCategory;
     });
     result.forEach(person => {
-        const ratingData = getRating(person.id);
         const statusClass = person.status.toLowerCase();
         const gamesHTML = person.games.map(game => `<span class="game">${game}</span>`).join("");
         const card = document.createElement("div");
@@ -311,13 +250,12 @@ function renderMidman(){
             <div class="status ${statusClass}"><span class="dot"></span>${person.status}</div>
             <div class="games">${gamesHTML}</div>
             <div class="card-info">
-                <div><small>Rating</small><strong>⭐ ${ratingData.avg} (${ratingData.count})</strong></div>
                 <div><small>Since</small><strong>${person.since}</strong></div>
+                <div><small>Status</small><strong>${person.status}</strong></div>
             </div>
             <div class="buttons">
                 <button class="btn detail-btn" onclick="showDetail(${person.id})">Profil</button>
                 <a class="btn whatsapp" href="https://wa.me/${person.phone}" target="_blank">WhatsApp</a>
-                <button class="btn review-btn" onclick="openPopup(${person.id})">⭐ Review</button>
             </div>
         `;
         grid.appendChild(card);
@@ -336,22 +274,8 @@ function setCategory(category, button){
 function showDetail(id){
     const person = midmanData.find(item => item.id === id);
     if(!person) return;
-    const ratingData = getRating(person.id);
     const statusClass = person.status.toLowerCase();
     const gamesHTML = person.games.map(game => `<span>${game}</span>`).join("");
-    
-    const allReviews = JSON.parse(localStorage.getItem("midmanReviews") || "[]");
-    const personReviews = allReviews.filter(r => r.midmanId === id);
-    const reviewHTML = personReviews.length > 0 ? personReviews.map(r => `
-        <div class="review-item">
-            <div class="review-header">
-                <span class="review-name">${r.name}</span>
-                <span class="review-date">${r.date}</span>
-            </div>
-            <div class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
-            <div class="review-text">${r.text}</div>
-        </div>
-    `).join("") : `<p style="color:#718da7;text-align:center;">Belum ada review lagi. Jadilah yang pertama! ⭐</p>`;
 
     document.getElementById("detailContent").innerHTML = `
         <div class="detail-top">
@@ -367,20 +291,15 @@ function showDetail(id){
             <div class="detail-games">${gamesHTML}</div>
         </div>
         <div class="detail-section">
-            <h3>📊 Statistik</h3>
+            <h3>📊 Info</h3>
             <div class="detail-stats">
-                <div class="detail-stat"><strong>⭐ ${ratingData.avg}</strong><span>${ratingData.count} Review</span></div>
                 <div class="detail-stat"><strong>${person.since}</strong><span>Joined</span></div>
+                <div class="detail-stat"><strong>${person.status}</strong><span>Status</span></div>
             </div>
         </div>
         <div class="detail-section">
             <h3>🛡️ Tentang Midman</h3>
             <p>${person.description}</p>
-        </div>
-        <div class="detail-section">
-            <h3>💬 Review Pelanggan (${ratingData.count})</h3>
-            <button class="btn review-btn" onclick="openPopup(${person.id})" style="margin-bottom:15px;width:100%;">+ Beri Review</button>
-            <div class="review-list">${reviewHTML}</div>
         </div>
         <a class="detail-contact" href="https://wa.me/${person.phone}" target="_blank">💬 Hubungi ${person.name} melalui WhatsApp</a>
     `;
@@ -393,51 +312,6 @@ function showHome(){
     document.getElementById("detailPage").style.display = "none";
     document.getElementById("homePage").style.display = "block";
     window.scrollTo({top:0, behavior:"smooth"});
-}
-
-function openPopup(id){
-    currentReviewId = id;
-    const person = midmanData.find(p => p.id === id);
-    document.getElementById("popupTitle").innerText = `Beri Review untuk ${person.name}`;
-    document.getElementById("reviewPopup").style.display = "flex";
-    selectedStars = 0;
-    document.querySelectorAll(".star").forEach(s => s.classList.remove("active"));
-    document.getElementById("reviewName").value = "";
-    document.getElementById("reviewText").value = "";
-}
-
-function closePopup(){
-    document.getElementById("reviewPopup").style.display = "none";
-}
-
-document.addEventListener("click", function(e){
-    if(e.target.classList.contains("star")){
-        selectedStars = parseInt(e.target.dataset.value);
-        document.querySelectorAll(".star").forEach((s, i) => {
-            s.classList.toggle("active", i < selectedStars);
-        });
-    }
-});
-
-function submitReview(){
-    const name = document.getElementById("reviewName").value.trim();
-    const text = document.getElementById("reviewText").value.trim();
-    if(selectedStars === 0 || name === "" || text === ""){
-        alert("Sila lengkapkan rating, nama dan review");
-        return;
-    }
-    const reviews = JSON.parse(localStorage.getItem("midmanReviews") || "[]");
-    reviews.push({
-        midmanId: currentReviewId,
-        stars: selectedStars,
-        name: name,
-        text: text,
-        date: new Date().toLocaleDateString("ms-MY")
-    });
-    localStorage.setItem("midmanReviews", JSON.stringify(reviews));
-    alert("Terima kasih! Review anda telah dihantar ✅");
-    closePopup();
-    showDetail(currentReviewId);
 }
 
 function changeLanguage(language, button){

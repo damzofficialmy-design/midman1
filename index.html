@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>VERIFIED MIDMAN | Trusted Malaysia</title>
 
 <style>
@@ -101,7 +100,7 @@ header{
     align-items:center;
     justify-content:space-between;
     padding:0 6%;
-    background:rgba(2,10,20,.82);
+    background:rgba(2,10,20,.88);
     backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(0,153,255,.22);
 }
@@ -202,53 +201,14 @@ header{
     font-size:15px;
 }
 
-/* SEARCH */
-
-.controls{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-.search{
-    position:relative;
-    margin-bottom:20px;
-}
-
-.search input{
-    width:100%;
-    padding:17px 20px 17px 48px;
-    border-radius:13px;
-    border:1px solid rgba(0,153,255,.35);
-    outline:none;
-    background:rgba(3,18,33,.85);
-    color:#fff;
-    font-size:15px;
-    transition:.3s;
-}
-
-.search input:focus{
-    border-color:#00aaff;
-    box-shadow:0 0 20px rgba(0,153,255,.12);
-}
-
-.search input::placeholder{color:#69849e;}
-
-.search-icon{
-    position:absolute;
-    left:17px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#00aaff;
-    font-size:18px;
-}
-
 /* FILTER */
 
 .filters{
     display:flex;
     gap:10px;
-    margin-bottom:25px;
+    width:90%;
+    max-width:1100px;
+    margin:0 auto 25px;
 }
 
 .filters button{
@@ -263,7 +223,7 @@ header{
     font-weight:bold;
 }
 
-/* GRID */
+/* MIDMAN GRID */
 
 .container{
     width:90%;
@@ -354,7 +314,7 @@ header{
     margin-top:4px;
 }
 
-/* VERIFIED BLUE BADGE */
+/* VERIFIED BADGE */
 
 .verified-badge{
     display:inline-flex;
@@ -513,13 +473,99 @@ header{
     box-shadow:0 0 17px rgba(0,200,100,.25);
 }
 
-.no-result{
-    display:none;
-    text-align:center;
-    padding:55px 10px;
-    color:#718da7;
-    font-size:15px;
+/* CARA GUNA MIDMAN */
+
+.how-to{
+    width:90%;
+    max-width:1100px;
+    margin:65px auto 0;
 }
+
+.how-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.how-title h2{
+    font-size:clamp(25px,5vw,38px);
+    font-weight:900;
+    text-transform:uppercase;
+    text-shadow:0 0 20px rgba(0,153,255,.3);
+}
+
+.how-title h2 span{color:#00aaff;}
+
+.how-title p{
+    color:#83a6c2;
+    font-size:13px;
+    line-height:1.7;
+    margin-top:10px;
+}
+
+.how-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.how-card{
+    position:relative;
+    padding:25px 18px;
+    border-radius:15px;
+    background:linear-gradient(
+        145deg,
+        rgba(11,40,70,.92),
+        rgba(2,14,28,.96)
+    );
+    border:1px solid rgba(0,153,255,.22);
+    transition:.3s;
+}
+
+.how-card:hover{
+    transform:translateY(-5px);
+    border-color:#009cff;
+    box-shadow:0 0 20px rgba(0,140,255,.15);
+}
+
+.how-number{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0078df,#00b8ff);
+    color:#fff;
+    font-size:20px;
+    font-weight:900;
+    box-shadow:0 0 15px rgba(0,153,255,.25);
+    margin-bottom:18px;
+}
+
+.how-card h3{
+    font-size:16px;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.how-card p{
+    color:#8ba8c2;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.how-warning{
+    margin-top:22px;
+    padding:18px;
+    border-radius:12px;
+    background:rgba(255,180,0,.06);
+    border:1px solid rgba(255,193,7,.2);
+    color:#d9c58e;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.how-warning strong{color:#ffd15c;}
 
 /* DETAIL PAGE */
 
@@ -682,6 +728,12 @@ footer{
 
 /* MOBILE */
 
+@media(max-width:800px){
+    .how-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
 @media(max-width:600px){
     header{
         height:65px;
@@ -731,6 +783,12 @@ footer{
 
     .particles{display:none;}
 }
+
+@media(max-width:450px){
+    .how-grid{grid-template-columns:1fr;}
+
+    .how-card{padding:20px;}
+}
 </style>
 </head>
 
@@ -750,6 +808,8 @@ footer{
     <span class="particle" style="left:95%;animation-delay:3s"></span>
 </div>
 
+<!-- HEADER -->
+
 <header>
     <div class="brand">
         <img src="images/damz-3d.jpg" alt="DAMZ">
@@ -764,6 +824,8 @@ footer{
     </div>
 </header>
 
+<!-- HOME PAGE -->
+
 <main id="homePage">
 
     <section class="hero">
@@ -774,41 +836,95 @@ footer{
         </p>
     </section>
 
-    <section class="controls">
-        <div class="search">
-            <span class="search-icon">🔎</span>
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Cari nama Midman..."
-                oninput="filterMidman()"
-            >
-        </div>
-
-        <div class="filters">
-            <button class="active" id="allButton" onclick="setCategory(this)">
-                👥 ALL MIDMAN
-            </button>
-        </div>
-    </section>
+    <div class="filters">
+        <button class="active" id="allButton" onclick="setCategory(this)">
+            👥 ALL MIDMAN
+        </button>
+    </div>
 
     <section class="container">
         <div class="midman-grid" id="midmanGrid"></div>
-        <div class="no-result" id="noResult">
-            ❌ Tiada Midman dijumpai.
+    </section>
+
+    <!-- CARA GUNA MIDMAN -->
+
+    <section class="how-to" id="caraGuna">
+
+        <div class="how-title">
+            <h2 id="howHeading">CARA GUNA <span>MIDMAN</span></h2>
+            <p id="howSubtitle">
+                Ikuti 4 langkah mudah untuk menjalankan transaksi
+                akaun gaming melalui perkhidmatan Midman.
+            </p>
         </div>
+
+        <div class="how-grid">
+
+            <div class="how-card">
+                <div class="how-number">01</div>
+                <h3 id="step1Title">Pilih Midman</h3>
+                <p id="step1Text">
+                    Pilih Midman yang tersedia dalam senarai VERIFIED MIDMAN
+                    mengikut status dan keperluan urusan anda.
+                </p>
+            </div>
+
+            <div class="how-card">
+                <div class="how-number">02</div>
+                <h3 id="step2Title">Hubungi Midman</h3>
+                <p id="step2Text">
+                    Tekan butang WhatsApp untuk menghubungi Midman.
+                    Terangkan jenis transaksi, harga akaun dan
+                    persetujuan antara pembeli dengan penjual.
+                </p>
+            </div>
+
+            <div class="how-card">
+                <div class="how-number">03</div>
+                <h3 id="step3Title">Mulakan Transaksi</h3>
+                <p id="step3Text">
+                    Ikuti arahan Midman yang dipersetujui.
+                    Pastikan butiran akaun, bayaran, caj perkhidmatan
+                    dan syarat transaksi jelas sebelum meneruskan urusan.
+                </p>
+            </div>
+
+            <div class="how-card">
+                <div class="how-number">04</div>
+                <h3 id="step4Title">Sahkan & Selesaikan</h3>
+                <p id="step4Text">
+                    Setelah semua syarat dipenuhi dan maklumat disahkan,
+                    Midman akan membantu menyelesaikan transaksi
+                    mengikut persetujuan semua pihak.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="how-warning" id="howWarning">
+            <strong>⚠️ PERINGATAN KESELAMATAN</strong><br>
+            Pastikan anda berurusan dengan Midman melalui saluran rasmi
+            yang telah disahkan. Jangan membuat bayaran atau menyerahkan
+            maklumat akaun sebelum syarat transaksi dipersetujui.
+            Semak identiti Midman dan caj perkhidmatan terlebih dahulu.
+        </div>
+
     </section>
 
 </main>
 
+<!-- DETAIL PAGE -->
+
 <section id="detailPage">
     <div class="detail-container">
-        <button class="back" onclick="showHome()">← Kembali</button>
+        <button class="back" id="backButton" onclick="showHome()">← Kembali</button>
         <div class="detail-card" id="detailContent"></div>
     </div>
 </section>
 
-<footer>
+<!-- FOOTER -->
+
+<footer id="footerText">
     © 2026 VERIFIED MIDMAN · Trusted Malaysia
 </footer>
 
@@ -825,7 +941,7 @@ const midmanData = [
         role:"Founder & Senior Midman",
         image:"images/damz-3d.jpg",
         status:"ONLINE",
-        since:"2022",
+        since:"2025",
         phone:"601133169293",
         description:"Berpengalaman dalam urusan midman dan jual beli akaun gaming. Mengutamakan keselamatan serta proses transaksi yang jelas."
     },
@@ -835,7 +951,7 @@ const midmanData = [
         role:"Trusted Midman",
         image:"images/midman2.jpg",
         status:"ONLINE",
-        since:"2022",
+        since:"2025",
         phone:"60123456789",
         description:"Midman yang membantu urusan transaksi akaun gaming dengan proses yang mudah dan teratur."
     },
@@ -852,7 +968,7 @@ const midmanData = [
     {
         id:4,
         name:"Admin D",
-        role:"Trusted Midman",
+        role:"Junior Midman",
         image:"images/midman4.jpg",
         status:"OFFLINE",
         since:"2026",
@@ -872,7 +988,7 @@ const midmanData = [
     {
         id:6,
         name:"Admin K",
-        role:"Trusted Midman",
+        role:"Senior Midman",
         image:"images/midman6.jpg",
         status:"ONLINE",
         since:"2025",
@@ -902,7 +1018,7 @@ const midmanData = [
     {
         id:9,
         name:"Admin S",
-        role:"Trusted Midman",
+        role:"Senior Midman",
         image:"images/midman9.jpg",
         status:"OFFLINE",
         since:"2025",
@@ -932,17 +1048,9 @@ function verifiedBadge(){
 function renderMidman(){
 
     const grid = document.getElementById("midmanGrid");
-    const search = document.getElementById("searchInput").value
-        .toLowerCase()
-        .trim();
-
     grid.innerHTML = "";
 
-    const result = midmanData.filter(person =>
-        person.name.toLowerCase().includes(search)
-    );
-
-    result.forEach(person => {
+    midmanData.forEach(person => {
 
         const statusClass = person.status.toLowerCase();
 
@@ -951,6 +1059,7 @@ function renderMidman(){
 
         card.innerHTML = `
             <div class="profile">
+
                 <img
                     class="avatar"
                     src="${person.image}"
@@ -965,6 +1074,7 @@ function renderMidman(){
                     </div>
                     <div class="role">${person.role}</div>
                 </div>
+
             </div>
 
             <div class="status ${statusClass}">
@@ -977,6 +1087,7 @@ function renderMidman(){
                     <small>Since</small>
                     <strong>${person.since}</strong>
                 </div>
+
                 <div>
                     <small>Status</small>
                     <strong>${person.status}</strong>
@@ -1001,16 +1112,9 @@ function renderMidman(){
 
         grid.appendChild(card);
     });
-
-    document.getElementById("noResult").style.display =
-        result.length === 0 ? "block" : "none";
 }
 
-/* SEARCH */
-
-function filterMidman(){
-    renderMidman();
-}
+/* FILTER BUTTON */
 
 function setCategory(button){
     document.querySelectorAll(".filters button").forEach(btn => {
@@ -1018,7 +1122,6 @@ function setCategory(button){
     });
 
     button.classList.add("active");
-    renderMidman();
 }
 
 /* DETAIL PROFILE */
@@ -1117,29 +1220,60 @@ function changeLanguage(language,button){
 
     button.classList.add("active");
 
-    const heroText = document.getElementById("heroText");
-    const search = document.getElementById("searchInput");
-    const noResult = document.getElementById("noResult");
-    const allButton = document.getElementById("allButton");
+    const en = language === "en";
 
-    if(language === "en"){
+    document.getElementById("heroText").innerText = en
+        ? "Trusted Midman list for gaming account transactions in Malaysia."
+        : "Senarai Midman dipercayai untuk urusan jual beli akaun gaming di Malaysia.";
 
-        heroText.innerText =
-            "Trusted Midman list for gaming account transactions in Malaysia.";
+    document.getElementById("allButton").innerText =
+        "👥 ALL MIDMAN";
 
-        search.placeholder = "Search Midman name...";
-        noResult.innerText = "❌ No Midman found.";
-        allButton.innerText = "👥 ALL MIDMAN";
+    document.getElementById("backButton").innerText =
+        en ? "← Back" : "← Kembali";
 
-    }else{
+    document.getElementById("howHeading").innerHTML = en
+        ? 'HOW TO USE <span>MIDMAN</span>'
+        : 'CARA GUNA <span>MIDMAN</span>';
 
-        heroText.innerText =
-            "Senarai Midman dipercayai untuk urusan jual beli akaun gaming di Malaysia.";
+    document.getElementById("howSubtitle").innerText = en
+        ? "Follow these 4 simple steps to complete a gaming account transaction through a Midman."
+        : "Ikuti 4 langkah mudah untuk menjalankan transaksi akaun gaming melalui perkhidmatan Midman.";
 
-        search.placeholder = "Cari nama Midman...";
-        noResult.innerText = "❌ Tiada Midman dijumpai.";
-        allButton.innerText = "👥 ALL MIDMAN";
-    }
+    document.getElementById("step1Title").innerText =
+        en ? "Choose a Midman" : "Pilih Midman";
+
+    document.getElementById("step1Text").innerText = en
+        ? "Choose a Midman from the VERIFIED MIDMAN list based on availability and your transaction needs."
+        : "Pilih Midman yang tersedia dalam senarai VERIFIED MIDMAN mengikut status dan keperluan urusan anda.";
+
+    document.getElementById("step2Title").innerText =
+        en ? "Contact the Midman" : "Hubungi Midman";
+
+    document.getElementById("step2Text").innerText = en
+        ? "Tap WhatsApp to contact the Midman. Explain the transaction, account price, and the agreement between buyer and seller."
+        : "Tekan butang WhatsApp untuk menghubungi Midman. Terangkan jenis transaksi, harga akaun dan persetujuan antara pembeli dengan penjual.";
+
+    document.getElementById("step3Title").innerText =
+        en ? "Start the Transaction" : "Mulakan Transaksi";
+
+    document.getElementById("step3Text").innerText = en
+        ? "Follow the agreed procedure. Confirm account details, payments, service fees, and transaction terms before proceeding."
+        : "Ikuti arahan Midman yang dipersetujui. Pastikan butiran akaun, bayaran, caj perkhidmatan dan syarat transaksi jelas sebelum meneruskan urusan.";
+
+    document.getElementById("step4Title").innerText =
+        en ? "Confirm & Complete" : "Sahkan & Selesaikan";
+
+    document.getElementById("step4Text").innerText = en
+        ? "Once all terms are fulfilled and details verified, the Midman will help complete the transaction according to the agreement."
+        : "Setelah semua syarat dipenuhi dan maklumat disahkan, Midman akan membantu menyelesaikan transaksi mengikut persetujuan semua pihak.";
+
+    document.getElementById("howWarning").innerHTML = en
+        ? "<strong>⚠️ SAFETY REMINDER</strong><br>Make sure you contact the Midman through a verified official channel. Do not make payments or share account information before agreeing to the transaction terms. Verify the Midman's identity and service fees first."
+        : "<strong>⚠️ PERINGATAN KESELAMATAN</strong><br>Pastikan anda berurusan dengan Midman melalui saluran rasmi yang telah disahkan. Jangan membuat bayaran atau menyerahkan maklumat akaun sebelum syarat transaksi dipersetujui. Semak identiti Midman dan caj perkhidmatan terlebih dahulu.";
+
+    document.getElementById("footerText").innerText =
+        "© 2026 VERIFIED MIDMAN · Trusted Malaysia";
 }
 
 /* START */

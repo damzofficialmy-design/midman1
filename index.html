@@ -243,7 +243,7 @@ header{
     font-size:18px;
 }
 
-/* ALL MIDMAN FILTER */
+/* FILTER */
 
 .filters{
     display:flex;
@@ -263,7 +263,7 @@ header{
     font-weight:bold;
 }
 
-/* MIDMAN GRID */
+/* GRID */
 
 .container{
     width:90%;
@@ -277,7 +277,7 @@ header{
     gap:15px;
 }
 
-/* SMALLER PROFILE CARD */
+/* CARD */
 
 .card{
     position:relative;
@@ -339,6 +339,10 @@ header{
 .profile-info{flex:1;min-width:0;}
 
 .name{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:5px;
     font-size:17px;
     font-weight:900;
     overflow-wrap:anywhere;
@@ -349,6 +353,45 @@ header{
     font-size:11px;
     margin-top:4px;
 }
+
+/* VERIFIED BLUE BADGE */
+
+.verified-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:17px;
+    height:17px;
+    flex-shrink:0;
+    background:linear-gradient(135deg,#21baff,#0876ff);
+    color:#fff;
+    border-radius:50%;
+    font-size:11px;
+    font-weight:900;
+    line-height:1;
+    box-shadow:
+        0 0 8px rgba(0,153,255,.65),
+        0 0 16px rgba(0,153,255,.25);
+    vertical-align:middle;
+}
+
+.detail-name{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:7px;
+    font-size:32px;
+    font-weight:900;
+    overflow-wrap:anywhere;
+}
+
+.detail-name .verified-badge{
+    width:23px;
+    height:23px;
+    font-size:15px;
+}
+
+/* STATUS */
 
 .status{
     position:relative;
@@ -554,12 +597,6 @@ header{
     box-shadow:0 0 25px rgba(0,153,255,.3);
 }
 
-.detail-name{
-    font-size:32px;
-    font-weight:900;
-    overflow-wrap:anywhere;
-}
-
 .detail-role{
     margin-top:7px;
     color:#83a6c2;
@@ -679,9 +716,7 @@ footer{
 
     .detail-card{padding:20px;}
 
-    .detail-top{
-        gap:15px;
-    }
+    .detail-top{gap:15px;}
 
     .detail-name{font-size:26px;}
 
@@ -696,7 +731,6 @@ footer{
 
     .particles{display:none;}
 }
-
 </style>
 </head>
 
@@ -741,7 +775,6 @@ footer{
     </section>
 
     <section class="controls">
-
         <div class="search">
             <span class="search-icon">🔎</span>
             <input
@@ -757,7 +790,6 @@ footer{
                 👥 ALL MIDMAN
             </button>
         </div>
-
     </section>
 
     <section class="container">
@@ -889,9 +921,13 @@ const midmanData = [
     }
 ];
 
-/* ==============================
-   RENDER MIDMAN
-============================== */
+/* VERIFIED BADGE */
+
+function verifiedBadge(){
+    return `<span class="verified-badge" title="Verified Midman">✓</span>`;
+}
+
+/* RENDER MIDMAN */
 
 function renderMidman(){
 
@@ -915,7 +951,6 @@ function renderMidman(){
 
         card.innerHTML = `
             <div class="profile">
-
                 <img
                     class="avatar"
                     src="${person.image}"
@@ -924,10 +959,12 @@ function renderMidman(){
                 >
 
                 <div class="profile-info">
-                    <div class="name">${person.name}</div>
+                    <div class="name">
+                        ${person.name}
+                        ${verifiedBadge()}
+                    </div>
                     <div class="role">${person.role}</div>
                 </div>
-
             </div>
 
             <div class="status ${statusClass}">
@@ -940,7 +977,6 @@ function renderMidman(){
                     <small>Since</small>
                     <strong>${person.since}</strong>
                 </div>
-
                 <div>
                     <small>Status</small>
                     <strong>${person.status}</strong>
@@ -970,9 +1006,7 @@ function renderMidman(){
         result.length === 0 ? "block" : "none";
 }
 
-/* ==============================
-   SEARCH
-============================== */
+/* SEARCH */
 
 function filterMidman(){
     renderMidman();
@@ -984,13 +1018,10 @@ function setCategory(button){
     });
 
     button.classList.add("active");
-
     renderMidman();
 }
 
-/* ==============================
-   DETAIL PROFILE
-============================== */
+/* DETAIL PROFILE */
 
 function showDetail(id){
 
@@ -1012,7 +1043,11 @@ function showDetail(id){
             >
 
             <div>
-                <div class="detail-name">${person.name}</div>
+                <div class="detail-name">
+                    ${person.name}
+                    ${verifiedBadge()}
+                </div>
+
                 <div class="detail-role">${person.role}</div>
 
                 <div class="status ${statusClass}">
@@ -1054,7 +1089,6 @@ function showDetail(id){
         >
             💬 Hubungi ${person.name} melalui WhatsApp
         </a>
-
     `;
 
     document.getElementById("homePage").style.display = "none";
@@ -1063,9 +1097,7 @@ function showDetail(id){
     window.scrollTo({top:0,behavior:"smooth"});
 }
 
-/* ==============================
-   BACK TO HOME
-============================== */
+/* BACK TO HOME */
 
 function showHome(){
 
@@ -1075,9 +1107,7 @@ function showHome(){
     window.scrollTo({top:0,behavior:"smooth"});
 }
 
-/* ==============================
-   LANGUAGE BM / EN
-============================== */
+/* LANGUAGE BM / EN */
 
 function changeLanguage(language,button){
 
@@ -1112,9 +1142,7 @@ function changeLanguage(language,button){
     }
 }
 
-/* ==============================
-   START
-============================== */
+/* START */
 
 renderMidman();
 
